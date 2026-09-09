@@ -1,796 +1,322 @@
-/* =========================
-   REALISTIC EMBEDDED HOTEL VISUALS
-   No image files needed
-========================= */
-
-.picture,
-.gallery-picture,
-.big-picture {
-  position: relative;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
+* {
+  box-sizing: border-box;
 }
 
-/* HOTEL EXTERIOR */
-
-.picture-exterior {
-  background:
-    linear-gradient(
-      rgba(10,10,10,.05),
-      rgba(10,10,10,.55)
-    ),
-    linear-gradient(
-      180deg,
-      #8fb9d2 0%,
-      #d9e6e8 43%,
-      #5c6264 44%,
-      #27292a 100%
-    );
+html {
+  scroll-behavior: smooth;
 }
 
-.picture-exterior::before {
-  content: "";
-  position: absolute;
-  left: 12%;
-  right: 12%;
-  bottom: 0;
-  height: 78%;
-  background:
-    linear-gradient(
-      90deg,
-      transparent 4%,
-      rgba(255,214,75,.95) 5%,
-      rgba(255,214,75,.95) 9%,
-      transparent 10%,
-      transparent 16%,
-      rgba(255,214,75,.95) 17%,
-      rgba(255,214,75,.95) 21%,
-      transparent 22%,
-      transparent 28%,
-      rgba(255,214,75,.95) 29%,
-      rgba(255,214,75,.95) 33%,
-      transparent 34%,
-      transparent 40%,
-      rgba(255,214,75,.95) 41%,
-      rgba(255,214,75,.95) 45%,
-      transparent 46%,
-      transparent 52%,
-      rgba(255,214,75,.95) 53%,
-      rgba(255,214,75,.95) 57%,
-      transparent 58%,
-      transparent 64%,
-      rgba(255,214,75,.95) 65%,
-      rgba(255,214,75,.95) 69%,
-      transparent 70%,
-      transparent 76%,
-      rgba(255,214,75,.95) 77%,
-      rgba(255,214,75,.95) 81%,
-      transparent 82%
-    ),
-    linear-gradient(
-      90deg,
-      #292b2c,
-      #55585a 50%,
-      #252627
-    );
-  clip-path: polygon(
-    0 22%,
-    50% 0,
-    100% 22%,
-    100% 100%,
-    0 100%
-  );
-  box-shadow: 0 -15px 35px rgba(0,0,0,.25);
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f6f7;
+  color: #111;
 }
 
-.picture-exterior::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: 24%;
-  background:
-    linear-gradient(
-      90deg,
-      #222 0 18%,
-      #555 18% 20%,
-      #222 20% 80%,
-      #555 80% 82%,
-      #222 82%
-    );
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #080808;
+  border-bottom: 1px solid #252525;
+}
+
+.nav-inner {
+  max-width: 1250px;
+  margin: auto;
+  padding: 16px 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.logo {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: #ffd400;
+  display: block;
+  font-size: 11px;
+  letter-spacing: 4px;
+  margin-top: 2px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+  color: #ffd400;
+}
+
+.btn {
+  display: inline-block;
+  background: #ffd400;
+  color: #080808 !important;
+  padding: 12px 18px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 800;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
   opacity: .9;
 }
 
-
-/* LOBBY */
-
-.picture-lobby {
-  background:
-    radial-gradient(
-      ellipse at 50% 5%,
-      rgba(255,231,159,.9),
-      transparent 30%
-    ),
-    linear-gradient(
-      110deg,
-      #201912,
-      #806537 48%,
-      #211a13
-    );
+.mobile-toggle {
+  display: none;
+  color: white;
+  font-size: 25px;
 }
 
-.picture-lobby::before {
+.hero {
+  min-height: 600px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+}
+
+.hero::before {
   content: "";
   position: absolute;
-  inset: 12% 9% 0;
+  inset: 0;
   background:
-    repeating-linear-gradient(
-      90deg,
-      rgba(255,255,255,.08) 0 2px,
-      transparent 2px 55px
-    ),
     linear-gradient(
       90deg,
-      #17130f,
-      #c29b58 50%,
-      #17130f
-    );
-  clip-path: polygon(
-    20% 0,
-    80% 0,
-    100% 100%,
-    0 100%
-  );
-  box-shadow: inset 0 0 40px #0008;
-}
-
-.picture-lobby::after {
-  content: "";
-  position: absolute;
-  width: 70%;
-  height: 25%;
-  left: 15%;
-  bottom: 8%;
-  background:
-    linear-gradient(
-      180deg,
-      #a47c42,
-      #4a321d
-    );
-  border-radius: 50% 50% 5px 5px;
-  box-shadow: 0 10px 25px #0009;
-}
-
-
-/* STANDARD ROOM */
-
-.picture-standard {
-  background:
-    linear-gradient(
-      180deg,
-      #d8d4cb 0 57%,
-      #a68d6b 57% 100%
+      rgba(0,0,0,.75),
+      rgba(0,0,0,.35),
+      rgba(0,0,0,.1)
     );
 }
 
-.picture-standard::before {
-  content: "";
-  position: absolute;
-  width: 62%;
-  height: 48%;
-  left: 19%;
-  bottom: 7%;
-  background:
-    linear-gradient(
-      180deg,
-      #eee 0 20%,
-      #d4bd8c 21% 100%
-    );
-  border-radius: 8px 8px 4px 4px;
-  box-shadow:
-    0 12px 20px #0005,
-    inset 0 0 0 4px #a7895d;
-}
-
-.picture-standard::after {
-  content: "";
-  position: absolute;
-  width: 20%;
-  height: 32%;
-  left: 22%;
-  top: 20%;
-  background:
-    linear-gradient(
-      135deg,
-      #253b45,
-      #7894a0
-    );
-  box-shadow:
-    70px 0 0 -1px #7894a0;
-}
-
-
-/* FAMILY ROOM */
-
-.picture-family {
-  background:
-    linear-gradient(
-      180deg,
-      #c9d6da 0 55%,
-      #836d54 55%
-    );
-}
-
-.picture-family::before {
-  content: "";
-  position: absolute;
-  width: 75%;
-  height: 45%;
-  left: 12.5%;
-  bottom: 8%;
-  background:
-    linear-gradient(
-      180deg,
-      #eee 0 17%,
-      #b99b72 18% 100%
-    );
-  border-radius: 10px;
-  box-shadow: 0 14px 25px #0005;
-}
-
-.picture-family::after {
-  content: "";
-  position: absolute;
-  width: 25%;
-  height: 31%;
-  left: 18%;
-  top: 16%;
-  background:
-    linear-gradient(
-      135deg,
-      #536f78,
-      #b4c9cc
-    );
-  box-shadow:
-    115px 0 0 -1px #536f78;
-}
-
-
-/* SINGADOORE SUITE */
-
-.picture-suite {
-  background:
-    linear-gradient(
-      180deg,
-      #26231e 0,
-      #b9a783 57%,
-      #5d4934 57%
-    );
-}
-
-.picture-suite::before {
-  content: "";
-  position: absolute;
-  width: 64%;
-  height: 43%;
-  left: 18%;
-  bottom: 9%;
-  background:
-    linear-gradient(
-      180deg,
-      #eee8dc 0 16%,
-      #8c6c48 17% 100%
-    );
-  border-radius: 10px;
-  box-shadow: 0 18px 30px #0008;
-}
-
-.picture-suite::after {
-  content: "";
-  position: absolute;
-  width: 42%;
-  height: 45%;
-  right: 8%;
-  top: 12%;
-  background:
-    linear-gradient(
-      135deg,
-      #2d4a55,
-      #92b3bd
-    );
-  border: 5px solid #171717;
-}
-
-
-/* PRESIDENTIAL */
-
-.picture-presidential {
-  background:
-    radial-gradient(
-      circle at 50% 20%,
-      #e6c878,
-      transparent 20%
-    ),
-    linear-gradient(
-      180deg,
-      #171717,
-      #513d20 52%,
-      #171717
-    );
-}
-
-.picture-presidential::before {
-  content: "";
-  position: absolute;
-  width: 66%;
-  height: 45%;
-  left: 17%;
-  bottom: 8%;
-  background:
-    linear-gradient(
-      180deg,
-      #f3eee1 0 15%,
-      #9b773b 16% 100%
-    );
-  border-radius: 12px;
-  box-shadow:
-    0 18px 35px #000b,
-    0 0 35px rgba(255,210,70,.15);
-}
-
-.picture-presidential::after {
-  content: "";
-  position: absolute;
-  width: 30%;
-  height: 40%;
-  left: 35%;
-  top: 9%;
-  border-radius: 50%;
-  background:
-    radial-gradient(
-      circle,
-      #f8df91 0 8%,
-      #9c772e 9% 18%,
-      transparent 19%
-    );
-}
-
-
-/* POOLSIDE ROOM */
-
-.picture-poolside {
-  background:
-    linear-gradient(
-      180deg,
-      #91d9e9 0 48%,
-      #0789a4 49% 100%
-    );
-}
-
-.picture-poolside::before {
-  content: "";
-  position: absolute;
-  width: 55%;
-  height: 40%;
-  left: 10%;
-  bottom: 12%;
-  background:
-    linear-gradient(
-      180deg,
-      #eee 0 18%,
-      #c2a875 19% 100%
-    );
-  border-radius: 8px;
-  box-shadow: 0 12px 25px #0005;
-}
-
-.picture-poolside::after {
-  content: "";
-  position: absolute;
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1250px;
   width: 100%;
-  height: 35%;
-  bottom: 0;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,.22) 0 2px,
-      transparent 2px 10px
-    );
+  margin: auto;
+  padding: 60px 24px;
+  color: white;
 }
 
-
-/* KIDS SUITE */
-
-.picture-kids {
-  background:
-    linear-gradient(
-      135deg,
-      #40317a,
-      #efb544
-    );
+.hero h1 {
+  max-width: 750px;
+  font-size: clamp(42px, 7vw, 78px);
+  line-height: .98;
+  margin: 0 0 20px;
 }
 
-.picture-kids::before {
-  content: "";
-  position: absolute;
-  width: 65%;
-  height: 45%;
-  left: 17%;
-  bottom: 9%;
-  background:
-    linear-gradient(
-      180deg,
-      #f4f1e8 0 17%,
-      #72538c 18% 100%
-    );
-  border-radius: 12px;
-  box-shadow: 0 15px 25px #0007;
+.hero p {
+  max-width: 650px;
+  font-size: 20px;
+  line-height: 1.6;
 }
 
-.picture-kids::after {
-  content: "";
-  position: absolute;
-  width: 18%;
-  height: 18%;
-  top: 15%;
-  left: 15%;
-  background:
-    radial-gradient(
-      circle,
-      #fff 0 20%,
-      transparent 21%
-    );
+.section {
+  max-width: 1250px;
+  margin: auto;
+  padding: 75px 24px;
+}
+
+.section-title {
+  font-size: 38px;
+  margin: 0 0 12px;
+}
+
+.section-subtitle {
+  color: #666;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-top: 35px;
+}
+
+.card {
+  background: white;
+  border-radius: 14px;
+  overflow: hidden;
   box-shadow:
-    35px 0 0 #fff8,
-    70px 5px 0 #fff6,
-    105px -4px 0 #fff5;
+    0 8px 30px rgba(0,0,0,.08);
 }
 
-
-/* MAIN POOL */
-
-.picture-pool {
-  background:
-    linear-gradient(
-      180deg,
-      #8dd8ec 0 40%,
-      #19a5bd 41% 100%
-    );
+.photo {
+  min-height: 260px;
+  background-size: cover;
+  background-position: center;
 }
 
-.picture-pool::before {
-  content: "";
-  position: absolute;
-  width: 70%;
-  height: 38%;
-  left: 15%;
-  bottom: 0;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,.25) 0 2px,
-      transparent 2px 12px
-    ),
-    linear-gradient(
-      180deg,
-      #25c8df,
-      #057c99
-    );
-  border-radius: 50% 50% 0 0;
-  transform: perspective(300px) rotateX(12deg);
+.card-body {
+  padding: 24px;
 }
 
-.picture-pool::after {
-  content: "";
-  position: absolute;
-  width: 16%;
-  height: 55%;
-  right: 9%;
-  top: 12%;
-  background:
-    linear-gradient(
-      90deg,
-      #6b4b2c 0 25%,
-      #367346 26% 100%
-    );
-  border-radius: 50%;
-  box-shadow: -240px 45px 0 -5px #367346;
+.card h3 {
+  font-size: 25px;
+  margin: 8px 0;
 }
 
-
-/* KIDS POOL */
-
-.picture-kids-pool {
-  background:
-    linear-gradient(
-      180deg,
-      #73d7f1,
-      #20a9d2
-    );
+.card p {
+  color: #666;
+  line-height: 1.6;
 }
 
-.picture-kids-pool::before {
-  content: "";
-  position: absolute;
-  width: 72%;
-  height: 42%;
-  left: 14%;
-  bottom: 4%;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,.3) 0 2px,
-      transparent 2px 11px
-    ),
-    linear-gradient(
-      #45d7ee,
-      #1594bf
-    );
-  border-radius: 45%;
+.small {
+  font-size: 12px;
+  color: #777;
+  letter-spacing: .8px;
 }
 
-.picture-kids-pool::after {
-  content: "";
-  position: absolute;
-  width: 17%;
-  height: 60%;
-  left: 12%;
-  top: 5%;
-  border-radius: 40px;
-  background:
-    linear-gradient(
-      90deg,
-      #ef5a5a,
-      #f4b72b
-    );
-  transform: rotate(12deg);
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin: 18px 0 22px;
 }
 
-
-/* INDOOR POOL */
-
-.picture-indoor-pool {
-  background:
-    linear-gradient(
-      180deg,
-      #263b53,
-      #6d9eb9 48%,
-      #177e9b 49%
-    );
+.tag {
+  background: #f0f1f2;
+  padding: 7px 10px;
+  border-radius: 50px;
+  font-size: 12px;
 }
 
-.picture-indoor-pool::before {
-  content: "";
-  position: absolute;
-  width: 70%;
-  height: 37%;
-  left: 15%;
-  bottom: 0;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,.22) 0 2px,
-      transparent 2px 10px
-    ),
-    #168eaa;
-  border-radius: 50% 50% 0 0;
+.price {
+  font-size: 25px;
+  font-weight: 900;
 }
 
-.picture-indoor-pool::after {
-  content: "";
-  position: absolute;
-  left: 10%;
-  right: 10%;
-  top: 13%;
-  height: 8px;
-  background: #d8b967;
-  box-shadow:
-    0 45px 0 #d8b967,
-    0 90px 0 #d8b967;
+.dark-section {
+  background: #090909;
+  color: white;
 }
 
+.room-detail {
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 24px;
 
-/* LAZY RIVER */
-
-.picture-river {
-  background:
-    linear-gradient(
-      180deg,
-      #82dcca,
-      #087f91
-    );
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 45px;
+  align-items: center;
 }
 
-.picture-river::before {
-  content: "";
-  position: absolute;
-  width: 78%;
-  height: 80%;
-  left: 11%;
-  top: 30%;
-  background:
-    repeating-linear-gradient(
-      0deg,
-      rgba(255,255,255,.24) 0 2px,
-      transparent 2px 12px
-    ),
-    #0aa4a7;
-  border-radius: 50%;
-  box-shadow: 0 0 0 25px #3b8053;
+.room-detail .photo {
+  min-height: 520px;
+  border-radius: 16px;
 }
 
-.picture-river::after {
-  content: "";
-  position: absolute;
-  width: 12%;
-  height: 12%;
-  border-radius: 50%;
-  background: #e8e1c9;
-  left: 43%;
-  top: 42%;
-  box-shadow:
-    70px 25px 0 #e8e1c9,
-    -75px 40px 0 #e8e1c9;
+.room-detail h1 {
+  font-size: 52px;
+  margin: 10px 0;
 }
 
-
-/* BREAKFAST */
-
-.picture-breakfast {
-  background:
-    linear-gradient(
-      180deg,
-      #f0d28d,
-      #8e5d2c
-    );
+.room-detail p {
+  color: #666;
+  line-height: 1.7;
 }
 
-.picture-breakfast::before {
-  content: "";
-  position: absolute;
-  width: 70%;
-  height: 48%;
-  left: 15%;
-  bottom: 10%;
-  background:
-    radial-gradient(
-      ellipse,
-      #f4e3bd 0 28%,
-      #b57b3d 29% 34%,
-      transparent 35%
-    ),
-    radial-gradient(
-      ellipse at 70% 35%,
-      #fff 0 13%,
-      #d49b45 14% 20%,
-      transparent 21%
-    ),
-    linear-gradient(
-      #ddd,
-      #8b633c
-    );
+.room-detail li {
+  margin: 12px 0;
+}
+
+.kicker {
+  color: #b08d00;
+  font-weight: 900;
+  letter-spacing: 2px;
+  font-size: 12px;
+}
+
+.footer {
+  background: #080808;
+  color: white;
+  padding: 50px 24px;
+}
+
+.footer-inner {
+  max-width: 1250px;
+  margin: auto;
+
+  display: grid;
+  grid-template-columns:
+    repeat(3, 1fr);
+  gap: 30px;
+}
+
+.footer p {
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.footer a {
+  color: #ffd400;
+  text-decoration: none;
+}
+
+.success {
+  margin-top: 20px;
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 12px 25px #0007;
+  background: #e8f7e8;
+  border: 1px solid #9bd19b;
 }
 
-.picture-breakfast::after {
-  content: "";
-  position: absolute;
-  width: 25%;
-  height: 25%;
-  left: 8%;
-  top: 13%;
-  background:
-    radial-gradient(
-      circle,
-      #fff7df 0 30%,
-      #c8873d 31% 42%,
-      transparent 43%
-    );
-}
+@media (max-width: 850px) {
 
+  .nav-links {
+    display: none;
+  }
 
-/* GAME ROOM */
+  .mobile-toggle {
+    display: block;
+  }
 
-.picture-games {
-  background:
-    radial-gradient(
-      circle at 50% 35%,
-      #c73e9c,
-      transparent 25%
-    ),
-    linear-gradient(
-      135deg,
-      #17143d,
-      #3d2169
-    );
-}
+  .grid {
+    grid-template-columns: 1fr;
+  }
 
-.picture-games::before {
-  content: "";
-  position: absolute;
-  width: 55%;
-  height: 38%;
-  left: 22%;
-  bottom: 13%;
-  background:
-    linear-gradient(
-      180deg,
-      #252525,
-      #090909
-    );
-  border-radius: 8px;
-  box-shadow:
-    0 0 25px rgba(255,70,190,.4),
-    0 15px 25px #0009;
-}
+  .room-detail {
+    grid-template-columns: 1fr;
+  }
 
-.picture-games::after {
-  content: "";
-  position: absolute;
-  width: 18%;
-  height: 25%;
-  left: 41%;
-  top: 13%;
-  background:
-    linear-gradient(
-      90deg,
-      #55dfff,
-      #d53cff
-    );
-  border-radius: 4px;
-  box-shadow: 0 0 25px rgba(100,220,255,.5);
-}
+  .room-detail .photo {
+    min-height: 350px;
+  }
 
+  .footer-inner {
+    grid-template-columns: 1fr;
+  }
 
-/* =========================
-   GALLERY SIZING
-========================= */
+  .hero {
+    min-height: 520px;
+  }
 
-.gallery-picture {
-  height: 260px;
-}
-
-.gallery-picture.picture-exterior,
-.gallery-picture.picture-lobby,
-.gallery-picture.picture-suite,
-.gallery-picture.picture-pool,
-.gallery-picture.picture-kids-pool,
-.gallery-picture.picture-indoor-pool,
-.gallery-picture.picture-river,
-.gallery-picture.picture-breakfast,
-.gallery-picture.picture-games {
-  background-size: cover;
-  background-position: center;
-}
-
-
-/* =========================
-   LARGE ROOM VISUALS
-========================= */
-
-.big-picture.picture-standard,
-.big-picture.picture-family,
-.big-picture.picture-suite,
-.big-picture.picture-presidential,
-.big-picture.picture-poolside,
-.big-picture.picture-kids {
-  background-size: cover;
-  background-position: center;
-}
-
-
-/* =========================
-   REMOVE OLD EMOJI VISUALS
-========================= */
-
-.picture::before,
-.picture::after,
-.gallery-picture::before,
-.gallery-picture::after,
-.big-picture::before,
-.big-picture::after {
-  font-size: 0;
 }
