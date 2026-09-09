@@ -1,609 +1,554 @@
-// ========================================
-// SINGADOORE SUITES
-// FICTIONAL ROLEPLAY HOTEL
-// ========================================
+const photos = {
+  exterior: 'https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1800&q=88',
+
+  lobby: 'https://images.unsplash.com/photo-1564501049412-61c2a3083791?auto=format&fit=crop&w=1800&q=88',
+
+  standard: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1800&q=88',
+
+  family: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=1800&q=88',
+
+  suite: 'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1800&q=88',
+
+  presidential: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=88',
+
+  pool: 'https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1800&q=88',
+
+  kids: 'https://images.unsplash.com/photo-1560089000-7433a4ebbd64?auto=format&fit=crop&w=1800&q=88',
+
+  mainpool: 'https://images.unsplash.com/photo-1572331165267-854da2b10ccc?auto=format&fit=crop&w=1800&q=88',
+
+  indoor: 'https://images.unsplash.com/photo-1601918774946-25832a4be0d6?auto=format&fit=crop&w=1800&q=88',
+
+  breakfast: 'https://images.unsplash.com/photo-1528207776546-365bb710ee93?auto=format&fit=crop&w=1800&q=88',
+
+  games: 'https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=1600&q=88',
+
+  movie: 'https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=88',
+
+  familydeluxe: 'https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=1600&q=88'
+};
 
 
-// ========================================
-// FOOTER
-// ========================================
+const rooms = [
+  {
+    name: 'Standard Room',
+    price: 119,
+    guests: 2,
+    photo: photos.standard,
+    desc: 'A clean modern room for a simple fictional stay.',
+    features: [
+      '1 king bed',
+      'Smart TV',
+      'Wi-Fi',
+      'City view'
+    ]
+  },
 
-const footer = document.querySelector("footer");
+  {
+    name: 'Family Room',
+    price: 159,
+    guests: 4,
+    photo: photos.family,
+    desc: 'A roomy family setup made for a fun roleplay vacation.',
+    features: [
+      '2 beds',
+      'Family seating',
+      'Smart TV',
+      'Pool access'
+    ]
+  },
 
-if (footer) {
+  {
+    name: 'Deluxe Suite',
+    price: 199,
+    guests: 3,
+    photo: photos.suite,
+    desc: 'A stylish suite with extra space and a comfortable lounge.',
+    features: [
+      'King bed',
+      'Lounge area',
+      'Mini fridge',
+      'Resort view'
+    ]
+  },
 
-  footer.innerHTML = `
+  {
+    name: 'Pool View Suite',
+    price: 229,
+    guests: 3,
+    photo: photos.pool,
+    desc: 'A premium fictional suite overlooking the resort pool.',
+    features: [
+      'King bed',
+      'Pool view',
+      'Sofa',
+      'Breakfast option'
+    ]
+  },
 
-    <div class="footer-grid">
+  {
+    name: 'Family Deluxe',
+    price: 279,
+    guests: 5,
+    photo: photos.familydeluxe,
+    desc: 'A large family suite with room for the whole crew.',
+    features: [
+      '2 bedrooms',
+      'Living area',
+      '2 TVs',
+      'Pool access'
+    ]
+  },
 
-      <div>
+  {
+    name: 'Presidential Suite',
+    price: 399,
+    guests: 6,
+    photo: photos.presidential,
+    desc: 'The biggest fictional suite at Singadoore Suites.',
+    features: [
+      'Luxury bedroom',
+      'Large living room',
+      'Dining area',
+      'Premium view'
+    ]
+  }
+];
 
-        <div class="footer-logo">
 
-          <span class="logo-mark">S</span>
+function nav(active = '') {
 
-          <strong>Singadoore Suites</strong>
+  return `
+    <header class="nav">
+
+      <div class="nav-inner">
+
+        <a class="logo" href="index.html">
+          SINGADOORE
+          <span>SUITES</span>
+        </a>
+
+        <nav class="nav-links">
+
+          ${[
+            ['index.html','Home'],
+            ['rooms.html','Rooms'],
+            ['pools.html','Pools'],
+            ['breakfast.html','Breakfast'],
+            ['deals.html','Deals'],
+            ['amenities.html','Amenities'],
+            ['gallery.html','Gallery']
+          ].map(x => `
+            <a
+              class="${active === x[1] ? 'active' : ''}"
+              href="${x[0]}"
+            >
+              ${x[1]}
+            </a>
+          `).join('')}
+
+          <a class="btn" href="booking.html">
+            Book Now
+          </a>
+
+        </nav>
+
+        <span class="mobile-toggle">
+          ☰
+        </span>
+
+      </div>
+
+    </header>
+  `;
+}
+
+
+function footer() {
+
+  return `
+    <footer class="footer">
+
+      <div class="footer-inner">
+
+        <div>
+          <strong>SINGADOORE SUITES</strong>
+          <p>
+            Fictional family hotel roleplay experience.
+          </p>
+        </div>
+
+        <div>
+          <strong>Explore</strong>
+          <p>
+            <a href="rooms.html">Rooms</a> ·
+            <a href="pools.html">Pools</a> ·
+            <a href="breakfast.html">Breakfast</a> ·
+            <a href="gallery.html">Gallery</a>
+          </p>
+        </div>
+
+        <div>
+          <strong>Roleplay only</strong>
+          <p>
+            No real reservations or payments are processed.
+          </p>
+        </div>
+
+      </div>
+
+    </footer>
+  `;
+}
+
+
+function mount(active) {
+
+  document.body.insertAdjacentHTML(
+    'afterbegin',
+    nav(active)
+  );
+
+  document.body.insertAdjacentHTML(
+    'beforeend',
+    footer()
+  );
+}
+
+
+function roomCard(room) {
+
+  return `
+    <article class="card">
+
+      <div
+        class="photo"
+        style="background-image:url('${room.photo}')"
+      ></div>
+
+      <div class="card-body">
+
+        <div class="small">
+          UP TO ${room.guests} GUESTS
+        </div>
+
+        <h3>
+          ${room.name}
+        </h3>
+
+        <p>
+          ${room.desc}
+        </p>
+
+        <div class="features">
+
+          ${room.features.map(feature => `
+            <span class="tag">
+              ${feature}
+            </span>
+          `).join('')}
 
         </div>
 
+        <div
+          style="
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            gap:12px
+          "
+        >
+
+          <div>
+            <span class="price">
+              $${room.price}
+            </span>
+
+            <span class="small">
+              / roleplay night
+            </span>
+          </div>
+
+          <a
+            class="btn"
+            href="room.html?room=${encodeURIComponent(room.name)}"
+          >
+            View room
+          </a>
+
+        </div>
+
+      </div>
+
+    </article>
+  `;
+}
+
+
+function renderRooms() {
+
+  const element = document.querySelector('#roomCards');
+
+  if (!element) return;
+
+  element.innerHTML =
+    rooms.map(roomCard).join('');
+}
+
+
+function renderRoom() {
+
+  const element =
+    document.querySelector('#roomDetails');
+
+  if (!element) return;
+
+  const params =
+    new URLSearchParams(location.search);
+
+  const roomName =
+    params.get('room');
+
+  const room =
+    rooms.find(r => r.name === roomName)
+    || rooms[0];
+
+  element.innerHTML = `
+
+    <div class="room-detail">
+
+      <div
+        class="photo"
+        style="
+          background-image:url('${room.photo}')
+        "
+      ></div>
+
+      <div>
+
+        <div class="kicker">
+          SINGADOORE SUITES
+        </div>
+
+        <h1>
+          ${room.name}
+        </h1>
+
         <p>
-          A fictional hotel made for roleplay and fun.
+          ${room.desc}
         </p>
 
-      </div>
+        <div class="price">
+          $${room.price}
 
+          <span class="small">
+            / roleplay night
+          </span>
+        </div>
 
-      <div>
+        <ul>
 
-        <h3>Explore</h3>
+          ${room.features.map(feature => `
+            <li>${feature}</li>
+          `).join('')}
 
-        <a href="rooms.html">Rooms</a>
+        </ul>
 
-        <a href="pools.html">Pools</a>
-
-        <a href="breakfast.html">Breakfast</a>
-
-        <a href="deals.html">Deals</a>
-
-      </div>
-
-
-      <div>
-
-        <h3>Hotel</h3>
-
-        <a href="amenities.html">Amenities</a>
-
-        <a href="gallery.html">Gallery</a>
-
-        <a href="about.html">About</a>
-
-        <a href="contact.html">Contact</a>
+        <a
+          class="btn"
+          href="booking.html?room=${encodeURIComponent(room.name)}"
+        >
+          Choose this room
+        </a>
 
       </div>
-
-
-      <div>
-
-        <h3>Roleplay</h3>
-
-        <p>⭐ Fictional hotel</p>
-
-        <p>🏨 No real reservations</p>
-
-        <p>💳 No real payments</p>
-
-      </div>
-
-    </div>
-
-
-    <div class="footer-bottom">
-
-      © 2026 Singadoore Suites
-      · Fictional Roleplay Website
 
     </div>
 
   `;
-
 }
 
 
-// ========================================
-// ROOM DATA
-// ========================================
+function setupBooking() {
 
-const rooms = {
+  const form =
+    document.querySelector('#bookingForm');
 
-  standard: {
+  if (!form) return;
 
-    name: "Standard King Room",
-
-    price: 129,
-
-    picture: "picture-standard",
-
-    tag: "POPULAR",
-
-    description:
-      "A comfortable fictional room with everything you need for a relaxing hotel stay.",
-
-    features: [
-      "🛏️ King Bed",
-      "📺 Smart TV",
-      "📶 Free Wi-Fi",
-      "🚿 Private Bathroom",
-      "❄️ Air Conditioning",
-      "☕ Coffee Station"
-    ]
-
-  },
-
-
-  family: {
-
-    name: "Family Suite",
-
-    price: 189,
-
-    picture: "picture-family",
-
-    tag: "FAMILY FAVORITE",
-
-    description:
-      "A larger fictional suite made for families and groups.",
-
-    features: [
-      "🛏️ 2 Beds",
-      "🛋️ Living Area",
-      "📺 2 Smart TVs",
-      "📶 Free Wi-Fi",
-      "🧊 Mini Fridge",
-      "🎮 Game Area"
-    ]
-
-  },
-
-
-  singadoore: {
-
-    name: "Singadoore Suite",
-
-    price: 249,
-
-    picture: "picture-suite",
-
-    tag: "FEATURED",
-
-    description:
-      "Our signature suite with extra space and premium fictional hotel features.",
-
-    features: [
-      "🛏️ King Bed",
-      "🛋️ Large Living Room",
-      "🌆 City View",
-      "🛁 Large Bathroom",
-      "📺 Smart TV",
-      "☕ Premium Coffee"
-    ]
-
-  },
-
-
-  presidential: {
-
-    name: "Presidential Suite",
-
-    price: 399,
-
-    picture: "picture-presidential",
-
-    tag: "LUXURY",
-
-    description:
-      "The biggest fictional suite at Singadoore Suites.",
-
-    features: [
-      "🛏️ Luxury Bed",
-      "🛋️ Huge Living Room",
-      "🌆 Best View",
-      "🛁 Luxury Bathroom",
-      "🍿 Movie Room",
-      "🎮 Game Room"
-    ]
-
-  },
-
-
-  poolside: {
-
-    name: "Poolside Room",
-
-    price: 169,
-
-    picture: "picture-poolside",
-
-    tag: "POOL ACCESS",
-
-    description:
-      "A fictional room located close to the resort pool.",
-
-    features: [
-      "🏊 Pool Access",
-      "🛏️ King Bed",
-      "📺 Smart TV",
-      "📶 Free Wi-Fi",
-      "🧊 Mini Fridge",
-      "☕ Coffee Station"
-    ]
-
-  },
-
-
-  kids: {
-
-    name: "Kids Adventure Suite",
-
-    price: 199,
-
-    picture: "picture-kids",
-
-    tag: "KIDS PICK",
-
-    description:
-      "A fun fictional family suite with games and activities.",
-
-    features: [
-      "🎮 Game Area",
-      "📺 Smart TV",
-      "🛏️ 2 Beds",
-      "🎨 Activity Table",
-      "📶 Free Wi-Fi",
-      "🍿 Snack Station"
-    ]
-
-  }
-
-};
-
-
-// ========================================
-// ROOM DETAILS PAGE
-// ========================================
-
-const roomDetails =
-  document.getElementById("roomDetails");
-
-
-if (roomDetails) {
+  const roomSelect =
+    document.querySelector('#room');
 
   const params =
-    new URLSearchParams(
-      window.location.search
+    new URLSearchParams(location.search);
+
+  const selectedRoom =
+    params.get('room');
+
+  rooms.forEach(room => {
+
+    roomSelect.insertAdjacentHTML(
+      'beforeend',
+
+      `
+        <option value="${room.name}">
+          ${room.name} — $${room.price}
+        </option>
+      `
     );
 
-  const roomID =
-    params.get("room") || "singadoore";
+  });
+
+  if (selectedRoom) {
+    roomSelect.value = selectedRoom;
+  }
 
 
-  const room =
-    rooms[roomID];
+  form.addEventListener(
+    'submit',
+    event => {
 
+      event.preventDefault();
 
-  if (room) {
+      const data =
+        new FormData(form);
 
-    roomDetails.innerHTML = `
+      const confirmation =
+        'SGS-' +
+        Math.floor(
+          100000 +
+          Math.random() * 900000
+        );
 
-      <section class="section">
+      document.querySelector(
+        '#confirmation'
+      ).innerHTML = `
 
-        <div class="room-detail">
+        <div class="success">
 
-          <div
-            class="big-picture ${room.picture}">
-          </div>
+          <strong>
+            Roleplay booking created!
+          </strong>
 
+          <br>
 
-          <div>
+          Guest:
+          ${data.get('guest')}
 
-            <span class="tag">
-              ${room.tag}
-            </span>
+          <br>
 
+          Room:
+          ${data.get('room')}
 
-            <h1>
-              ${room.name}
-            </h1>
+          <br>
 
+          Guests:
+          ${data.get('guests')}
 
-            <p>
-              ${room.description}
-            </p>
+          <br>
 
+          Confirmation:
+          <strong>
+            ${confirmation}
+          </strong>
 
-            <div class="price">
+          <br>
 
-              $${room.price}
-
-              <small>
-                / night
-              </small>
-
-            </div>
-
-
-            <div class="feature-list">
-
-              ${room.features.map(feature => `
-
-                <div class="feature">
-                  ${feature}
-                </div>
-
-              `).join("")}
-
-            </div>
-
-
-            <a
-              href="booking.html?room=${roomID}"
-              class="btn btn-primary">
-
-              Book This Room
-
-            </a>
-
-
-            <a
-              href="rooms.html"
-              class="btn btn-dark">
-
-              Back to Rooms
-
-            </a>
-
-          </div>
+          <span class="small">
+            This is a fictional confirmation
+            for the website roleplay.
+          </span>
 
         </div>
 
-      </section>
+      `;
 
-    `;
+      form.reset();
 
-  }
-
+    }
+  );
 }
 
 
-// ========================================
-// BREAKFAST TIMER
-// ========================================
+function breakfastTimer() {
 
-const breakfastTimerElement =
-  document.getElementById("breakfastTimer");
+  const element =
+    document.querySelector(
+      '#breakfastTimer'
+    );
 
-
-if (breakfastTimerElement) {
-
-  function updateBreakfastTimer() {
-
-    const now =
-      new Date();
+  if (!element) return;
 
 
-    const start =
-      new Date();
+  function tick() {
 
-    start.setHours(7, 0, 0, 0);
+    const now = new Date();
 
-
-    const end =
-      new Date();
+    const end = new Date();
 
     end.setHours(11, 0, 0, 0);
 
 
-    const status =
-      document.getElementById(
-        "breakfastStatus"
-      );
+    if (now >= end) {
 
+      element.textContent =
+        'Breakfast is closed for today';
 
-    if (now < start) {
-
-      const difference =
-        start - now;
-
-
-      breakfastTimerElement.textContent =
-        formatTime(difference);
-
-
-      status.textContent =
-        "🥞 Breakfast starts soon!";
+      return;
 
     }
 
 
-    else if (
-      now >= start &&
-      now < end
-    ) {
-
-      const difference =
-        end - now;
-
-
-      breakfastTimerElement.textContent =
-        formatTime(difference);
-
-
-      status.textContent =
-        "🍳 BREAKFAST IS OPEN!";
-
-    }
-
-
-    else {
-
-      breakfastTimerElement.textContent =
-        "00:00:00";
-
-
-      status.textContent =
-        "Breakfast has ended for today. Come back tomorrow!";
-
-    }
-
-  }
-
-
-  function formatTime(milliseconds) {
-
-    const totalSeconds =
+    let seconds =
       Math.floor(
-        milliseconds / 1000
+        (end - now) / 1000
       );
 
 
     const hours =
-      Math.floor(
-        totalSeconds / 3600
-      );
+      Math.floor(seconds / 3600);
+
+    seconds %= 3600;
 
 
     const minutes =
-      Math.floor(
-        (totalSeconds % 3600) / 60
-      );
+      Math.floor(seconds / 60);
+
+    seconds %= 60;
 
 
-    const seconds =
-      totalSeconds % 60;
-
-
-    return (
-      String(hours).padStart(2, "0") +
-      ":" +
-      String(minutes).padStart(2, "0") +
-      ":" +
-      String(seconds).padStart(2, "0")
-    );
+    element.textContent =
+      `${hours}h ${String(minutes).padStart(2,'0')}m ${String(seconds).padStart(2,'0')}s left`;
 
   }
 
 
-  updateBreakfastTimer();
-
+  tick();
 
   setInterval(
-    updateBreakfastTimer,
+    tick,
     1000
   );
 
 }
 
 
-// ========================================
-// BOOKING FORM
-// ========================================
+document.addEventListener(
+  'DOMContentLoaded',
+  () => {
 
-const bookingForm =
-  document.getElementById(
-    "bookingForm"
-  );
+    const page =
+      document.body.dataset.page || '';
 
+    mount(page);
 
-if (bookingForm) {
+    renderRooms();
 
-  const roomSelect =
-    document.getElementById(
-      "bookingRoom"
-    );
+    renderRoom();
 
+    setupBooking();
 
-  const params =
-    new URLSearchParams(
-      window.location.search
-    );
-
-
-  const selectedRoom =
-    params.get("room");
-
-
-  if (
-    selectedRoom &&
-    rooms[selectedRoom]
-  ) {
-
-    roomSelect.value =
-      selectedRoom;
+    breakfastTimer();
 
   }
-
-
-  bookingForm.addEventListener(
-    "submit",
-    function(event) {
-
-      event.preventDefault();
-
-
-      const name =
-        document.getElementById(
-          "guestName"
-        ).value;
-
-
-      const selected =
-        roomSelect.value;
-
-
-      const room =
-        rooms[selected];
-
-
-      const confirmationCode =
-        "SG-" +
-        Math.random()
-          .toString(36)
-          .substring(2, 8)
-          .toUpperCase();
-
-
-      const confirmation =
-        document.getElementById(
-          "confirmation"
-        );
-
-
-      confirmation.style.display =
-        "block";
-
-
-      confirmation.innerHTML = `
-
-        <h2>
-          ✅ Booking Created!
-        </h2>
-
-        <br>
-
-        <p>
-          Welcome
-          <strong>${name}</strong>!
-        </p>
-
-        <p>
-          Room:
-          <strong>${room.name}</strong>
-        </p>
-
-        <p>
-          Confirmation:
-          <strong>${confirmationCode}</strong>
-        </p>
-
-        <br>
-
-        <p>
-          🎭 This is only a fictional roleplay booking.
-        </p>
-
-        <p>
-          No real reservation or payment was made.
-        </p>
-
-      `;
-
-
-      confirmation.scrollIntoView({
-        behavior: "smooth"
-      });
-
-    }
-
-  );
-
-}
+);
