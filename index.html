@@ -1,927 +1,203 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Singadoore Suites fictional hotel roleplay website">
-  <title>Singadoore Suites</title>
+  <title>Singadoore Suites | Home</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<header class="topbar">
-  <a class="brand" href="#home" onclick="showPage('home')">
-    <div class="brand-logo">S</div>
-    <div>
-      <b>Singadoore</b>
+<header class="navbar">
+
+  <a href="index.html" class="logo">
+    <span class="logo-mark">S</span>
+    <span>
+      <strong>Singadoore</strong>
       <small>SUITES</small>
-    </div>
+    </span>
   </a>
 
-  <nav class="desktop-nav">
-    <a href="#home" onclick="showPage('home')">Home</a>
-    <a href="#rooms" onclick="showPage('rooms')">Rooms</a>
-    <a href="#deals" onclick="showPage('deals')">Deals</a>
-    <a href="#dining" onclick="showPage('breakfast')">Breakfast</a>
-    <a href="#pools" onclick="showPage('pools')">Pools</a>
-    <a href="#amenities" onclick="showPage('amenities')">Amenities</a>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="pools.html">Pools</a>
+    <a href="breakfast.html">Breakfast</a>
+    <a href="deals.html">Deals</a>
+    <a href="amenities.html">Amenities</a>
+    <a href="gallery.html">Gallery</a>
   </nav>
 
-  <button class="nav-book" onclick="showPage('booking')">Book Now</button>
+  <a href="booking.html" class="nav-book">Book Now</a>
+
 </header>
 
-<div class="mobile-nav">
-  <button onclick="showPage('home')">⌂<span>Home</span></button>
-  <button onclick="showPage('rooms')">🛏️<span>Rooms</span></button>
-  <button onclick="showPage('deals')">🏷️<span>Deals</span></button>
-  <button onclick="showPage('breakfast')">🍳<span>Food</span></button>
-  <button onclick="showPage('more')">☰<span>More</span></button>
-</div>
 
-<div id="notice" class="notice">
-  <span>🏨 This is a fictional roleplay hotel. No real bookings or payments are processed.</span>
-  <button onclick="closeNotice()">×</button>
-</div>
+<section class="hero hero-hotel">
 
-<main>
+  <div class="hero-content">
 
-<!-- HOME -->
-<section id="page-home" class="page active">
+    <span class="badge">⭐ FICTIONAL ROLEPLAY HOTEL</span>
 
-  <div class="hero">
-    <div class="hero-content">
-      <div class="hero-badge">WELCOME TO SINGADOORE SUITES</div>
-      <h1>Stay somewhere<br><span>extraordinary.</span></h1>
-      <p>
-        A fictional hotel experience with luxury suites, pools,
-        dining, activities and unforgettable stays.
-      </p>
+    <h1>Welcome to<br>Singadoore Suites</h1>
 
-      <div class="hero-buttons">
-        <button class="yellow-btn" onclick="showPage('booking')">Book Your Stay</button>
-        <button class="light-btn" onclick="showPage('rooms')">Explore Rooms</button>
-      </div>
+    <p>
+      A fictional hotel made for fun roleplay with luxury suites
+      pools breakfast deals and tons of things to explore.
+    </p>
+
+    <div class="hero-buttons">
+
+      <a href="rooms.html" class="btn btn-primary">
+        Explore Rooms
+      </a>
+
+      <a href="booking.html" class="btn btn-white">
+        Book Your Stay
+      </a>
+
     </div>
+
   </div>
 
-  <div class="quick-book">
-    <div>
-      <label>CHECK-IN</label>
-      <input type="date" id="homeCheckin">
-    </div>
+</section>
 
-    <div>
-      <label>CHECK-OUT</label>
-      <input type="date" id="homeCheckout">
-    </div>
 
-    <div>
-      <label>GUESTS</label>
-      <select id="homeGuests">
-        <option>1 Guest</option>
-        <option selected>2 Guests</option>
-        <option>3 Guests</option>
-        <option>4 Guests</option>
-        <option>5 Guests</option>
-        <option>6+ Guests</option>
-      </select>
-    </div>
+<section class="quick-grid">
 
-    <button onclick="quickSearch()">Check Availability</button>
+  <a href="rooms.html" class="quick-card">
+    <div class="icon">🛏️</div>
+    <h3>Rooms & Suites</h3>
+    <p>Explore every fictional room.</p>
+  </a>
+
+  <a href="pools.html" class="quick-card">
+    <div class="icon">🏊</div>
+    <h3>Pool Area</h3>
+    <p>See all four fictional pools.</p>
+  </a>
+
+  <a href="breakfast.html" class="quick-card">
+    <div class="icon">🥞</div>
+    <h3>Breakfast</h3>
+    <p>See today's menu and live timer.</p>
+  </a>
+
+  <a href="deals.html" class="quick-card">
+    <div class="icon">🏷️</div>
+    <h3>Special Deals</h3>
+    <p>Check today's hotel offers.</p>
+  </a>
+
+</section>
+
+
+<section class="section">
+
+  <div class="section-title">
+    <h2>Explore Singadoore</h2>
+    <p>Everything you need for your fictional hotel stay.</p>
   </div>
 
-  <section class="content-section">
-    <div class="section-title">
-      <span>THE SINGADOORE EXPERIENCE</span>
-      <h2>Everything you need under one roof.</h2>
-      <p>Explore everything our fictional hotel has to offer.</p>
-    </div>
+  <div class="cards">
 
-    <div class="experience-grid">
+    <a href="rooms.html" class="card">
 
-      <div class="experience-card" onclick="showPage('pools')">
-        <div class="experience-photo pool-photo"></div>
-        <div class="experience-info">
-          <span>POOL & LEISURE</span>
-          <h3>Make a splash</h3>
-          <p>Explore all of our fictional pools and poolside areas.</p>
-          <b>Explore pools →</b>
-        </div>
+      <div class="picture picture-suite"></div>
+
+      <div class="card-body">
+        <span class="tag">ROOMS</span>
+        <h3>Luxury Suites</h3>
+        <p>
+          From standard rooms to our Presidential Suite.
+        </p>
       </div>
 
-      <div class="experience-card" onclick="showPage('breakfast')">
-        <div class="experience-photo food-photo"></div>
-        <div class="experience-info">
-          <span>DINING</span>
-          <h3>Breakfast is waiting</h3>
-          <p>Check today's breakfast menu and opening countdown.</p>
-          <b>View breakfast →</b>
-        </div>
+    </a>
+
+
+    <a href="pools.html" class="card">
+
+      <div class="picture picture-pool"></div>
+
+      <div class="card-body">
+        <span class="tag">POOLS</span>
+        <h3>Resort Pool Area</h3>
+        <p>
+          Main pool kids pool indoor pool and lazy river.
+        </p>
       </div>
 
-      <div class="experience-card" onclick="showPage('rooms')">
-        <div class="experience-photo room-photo"></div>
-        <div class="experience-info">
-          <span>ROOMS & SUITES</span>
-          <h3>Find your room</h3>
-          <p>Choose from rooms, family suites and luxury suites.</p>
-          <b>View rooms →</b>
-        </div>
-      </div>
+    </a>
 
-    </div>
-  </section>
 
-  <section class="dark-banner">
-    <div>
-      <span>SINGADOORE SPECIAL</span>
-      <h2>Kids Stay & Swim</h2>
-      <p>Book a qualifying fictional family stay and enjoy pool activities.</p>
-    </div>
-    <button class="yellow-btn" onclick="showPage('deals')">See All Deals</button>
-  </section>
+    <a href="breakfast.html" class="card">
 
-  <section class="content-section">
-    <div class="section-title">
-      <span>WHY STAY WITH US?</span>
-      <h2>More than just a room.</h2>
-    </div>
+      <div class="picture picture-breakfast"></div>
 
-    <div class="icon-grid">
-      <div onclick="showPage('amenities')">
-        <strong>🏊</strong>
-        <h3>Multiple Pools</h3>
-        <p>Indoor, outdoor, kids and luxury pool areas.</p>
-      </div>
-
-      <div onclick="showPage('breakfast')">
-        <strong>🍳</strong>
+      <div class="card-body">
+        <span class="tag">FOOD</span>
         <h3>Daily Breakfast</h3>
-        <p>A changing fictional breakfast menu every day.</p>
+        <p>
+          Pancakes waffles eggs fruit cereal and more.
+        </p>
       </div>
 
-      <div onclick="showPage('activities')">
-        <strong>🎮</strong>
-        <h3>Activities</h3>
-        <p>Games, family activities and hotel entertainment.</p>
-      </div>
+    </a>
 
-      <div onclick="showPage('services')">
-        <strong>🛎️</strong>
-        <h3>Guest Services</h3>
-        <p>Housekeeping, room service and concierge help.</p>
-      </div>
-    </div>
-  </section>
-
-</section>
-
-
-<!-- ROOMS -->
-<section id="page-rooms" class="page">
-
-  <div class="page-header rooms-header">
-    <div>
-      <span>ROOMS & SUITES</span>
-      <h1>Choose your stay.</h1>
-      <p>Every room is fictional and designed for roleplay.</p>
-    </div>
   </div>
 
-  <section class="content-section">
-
-    <div class="filter-bar">
-      <button class="filter active" onclick="filterRooms('all', this)">All Rooms</button>
-      <button class="filter" onclick="filterRooms('standard', this)">Standard</button>
-      <button class="filter" onclick="filterRooms('family', this)">Family</button>
-      <button class="filter" onclick="filterRooms('luxury', this)">Luxury</button>
-    </div>
-
-    <div class="rooms-grid">
-
-      <article class="room-card-item" data-type="standard">
-        <div class="room-pic room-a"><span>POPULAR</span></div>
-        <div class="room-info">
-          <small>STANDARD</small>
-          <h3>Deluxe King Room</h3>
-          <p>🛏️ 1 King Bed · 👥 2 Guests</p>
-          <p class="muted">City view · Wi-Fi · TV · Mini fridge</p>
-          <div class="room-price">
-            <strong>$149</strong><span>/ night</span>
-            <button onclick="openRoom('Deluxe King Room',149,'1 King Bed','2 Guests')">View Room</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card-item" data-type="standard">
-        <div class="room-pic room-b"></div>
-        <div class="room-info">
-          <small>STANDARD</small>
-          <h3>Deluxe Double Room</h3>
-          <p>🛏️ 2 Double Beds · 👥 4 Guests</p>
-          <p class="muted">City view · Wi-Fi · TV · Mini fridge</p>
-          <div class="room-price">
-            <strong>$169</strong><span>/ night</span>
-            <button onclick="openRoom('Deluxe Double Room',169,'2 Double Beds','4 Guests')">View Room</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card-item" data-type="family">
-        <div class="room-pic room-c"><span>FAMILY</span></div>
-        <div class="room-info">
-          <small>FAMILY</small>
-          <h3>Family Suite</h3>
-          <p>🛏️ 2 Queen Beds · 👥 5 Guests</p>
-          <p class="muted">Pool view · Living area · Wi-Fi · TV</p>
-          <div class="room-price">
-            <strong>$219</strong><span>/ night</span>
-            <button onclick="openRoom('Family Suite',219,'2 Queen Beds','5 Guests')">View Room</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card-item" data-type="family">
-        <div class="room-pic room-d"></div>
-        <div class="room-info">
-          <small>FAMILY</small>
-          <h3>Poolside Family Room</h3>
-          <p>🛏️ 2 Queen Beds · 👥 5 Guests</p>
-          <p class="muted">Pool access · Family area · Wi-Fi</p>
-          <div class="room-price">
-            <strong>$249</strong><span>/ night</span>
-            <button onclick="openRoom('Poolside Family Room',249,'2 Queen Beds','5 Guests')">View Room</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card-item" data-type="family">
-        <div class="room-pic room-e"></div>
-        <div class="room-info">
-          <small>FAMILY</small>
-          <h3>Kids Adventure Suite</h3>
-          <p>🛏️ 2 Beds + Sofa · 👥 6 Guests</p>
-          <p class="muted">Game corner · Pool view · Family lounge</p>
-          <div class="room-price">
-            <strong>$279</strong><span>/ night</span>
-            <button onclick="openRoom('Kids Adventure Suite',279,'2 Beds + Sofa','6 Guests')">View Room</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card-item" data-type="luxury">
-        <div class="room-pic room-f"><span>LUXURY</span></div>
-        <div class="room-info">
-          <small>LUXURY</small>
-          <h3>Singadoore Grand Suite</h3>
-          <p>🛏️ King + Sofa · 👥 4 Guests</p>
-          <p class="muted">Living room · Balcony · Premium view</p>
-          <div class="room-price">
-            <strong>$399</strong><span>/ night</span>
-            <button onclick="openRoom('Singadoore Grand Suite',399,'King + Sofa','4 Guests')">View Room</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card-item" data-type="luxury">
-        <div class="room-pic room-g"></div>
-        <div class="room-info">
-          <small>LUXURY</small>
-          <h3>Executive Suite</h3>
-          <p>🛏️ King Bed · 👥 3 Guests</p>
-          <p class="muted">Work area · Lounge · Balcony · Premium view</p>
-          <div class="room-price">
-            <strong>$349</strong><span>/ night</span>
-            <button onclick="openRoom('Executive Suite',349,'King Bed','3 Guests')">View Room</button>
-          </div>
-        </div>
-      </article>
-
-      <article class="room-card-item" data-type="luxury">
-        <div class="room-pic room-h"></div>
-        <div class="room-info">
-          <small>LUXURY</small>
-          <h3>Presidential Suite</h3>
-          <p>🛏️ King Bed · 👥 4 Guests</p>
-          <p class="muted">Dining room · Living room · Balcony · VIP lounge</p>
-          <div class="room-price">
-            <strong>$599</strong><span>/ night</span>
-            <button onclick="openRoom('Presidential Suite',599,'King Bed','4 Guests')">View Room</button>
-          </div>
-        </div>
-      </article>
-
-    </div>
-  </section>
 </section>
 
 
-<!-- POOLS -->
-<section id="page-pools" class="page">
+<section class="dark-section">
 
-  <div class="page-header pool-header">
-    <div>
-      <span>POOL & LEISURE</span>
-      <h1>Make a splash.</h1>
-      <p>Explore every fictional pool at Singadoore Suites.</p>
-    </div>
+  <div class="section-title light">
+
+    <h2>Why Stay at Singadoore?</h2>
+
+    <p>
+      Because this hotel is made for roleplay 😎
+    </p>
+
   </div>
 
-  <section class="content-section">
 
-    <div class="live-status">
-      <div>
-        <span>POOL STATUS</span>
-        <strong id="poolStatus">Checking...</strong>
-      </div>
-      <div>
-        <span>POOL HOURS</span>
-        <strong>8:00 AM – 10:00 PM</strong>
-      </div>
-      <div>
-        <span>GUEST ACCESS</span>
-        <strong>All Hotel Guests</strong>
-      </div>
-    </div>
+  <div class="amenity-grid">
 
-    <div class="pool-grid">
+    <a href="amenities.html" class="amenity dark-card">
+      <div class="amenity-icon">📶</div>
+      <h3>Free Wi-Fi</h3>
+      <p>Fictional fast hotel Wi-Fi.</p>
+    </a>
 
-      <div class="pool-card" onclick="openPool('Main Resort Pool')">
-        <div class="pool-pic pool-main"></div>
-        <div>
-          <span>OUTDOOR</span>
-          <h2>Main Resort Pool</h2>
-          <p>Our largest pool with lounge chairs and a poolside area.</p>
-          <b>Explore pool →</b>
-        </div>
-      </div>
+    <a href="amenities.html" class="amenity dark-card">
+      <div class="amenity-icon">🎮</div>
+      <h3>Game Room</h3>
+      <p>Games and activities.</p>
+    </a>
 
-      <div class="pool-card" onclick="openPool('Kids Splash Pool')">
-        <div class="pool-pic pool-kids"></div>
-        <div>
-          <span>FAMILY</span>
-          <h2>Kids Splash Pool</h2>
-          <p>A shallow fictional pool area designed for younger guests.</p>
-          <b>Explore pool →</b>
-        </div>
-      </div>
+    <a href="amenities.html" class="amenity dark-card">
+      <div class="amenity-icon">🎬</div>
+      <h3>Movie Room</h3>
+      <p>Watch movies during your stay.</p>
+    </a>
 
-      <div class="pool-card" onclick="openPool('Indoor Pool')">
-        <div class="pool-pic pool-indoor"></div>
-        <div>
-          <span>INDOOR</span>
-          <h2>Indoor Pool</h2>
-          <p>Enjoy swimming indoors regardless of the weather.</p>
-          <b>Explore pool →</b>
-        </div>
-      </div>
+    <a href="amenities.html" class="amenity dark-card">
+      <div class="amenity-icon">🧸</div>
+      <h3>Kids Area</h3>
+      <p>Family-friendly activities.</p>
+    </a>
 
-      <div class="pool-card" onclick="openPool('Infinity Pool')">
-        <div class="pool-pic pool-infinity"></div>
-        <div>
-          <span>LUXURY</span>
-          <h2>Infinity Pool</h2>
-          <p>A premium rooftop pool with a fictional skyline view.</p>
-          <b>Explore pool →</b>
-        </div>
-      </div>
-
-    </div>
-  </section>
-</section>
-
-
-<!-- BREAKFAST -->
-<section id="page-breakfast" class="page">
-
-  <div class="page-header food-header">
-    <div>
-      <span>SINGADOORE DINING</span>
-      <h1>Good mornings start here.</h1>
-      <p>Today's fictional breakfast menu updates automatically.</p>
-    </div>
   </div>
 
-  <section class="content-section">
-
-    <div class="breakfast-live">
-
-      <div>
-        <span>TODAY'S BREAKFAST</span>
-        <h2 id="todayName">Loading...</h2>
-        <p id="todayDate"></p>
-      </div>
-
-      <div class="countdown">
-        <small id="timerLabel">BREAKFAST STATUS</small>
-        <strong id="breakfastTimer">00:00:00</strong>
-        <span id="breakfastStatus">Loading...</span>
-      </div>
-
-    </div>
-
-    <div class="menu-tabs">
-      <button class="menu-tab active" onclick="showMenu('hot',this)">🔥 Hot Food</button>
-      <button class="menu-tab" onclick="showMenu('cold',this)">🍓 Fresh</button>
-      <button class="menu-tab" onclick="showMenu('kids',this)">🧒 Kids</button>
-      <button class="menu-tab" onclick="showMenu('drinks',this)">🥤 Drinks</button>
-    </div>
-
-    <div id="menu-hot" class="menu-panel active">
-      <div class="food-item"><span>🥞</span><div><b>Buttermilk Pancakes</b><p>Served with syrup and fruit.</p></div></div>
-      <div class="food-item"><span>🧇</span><div><b>Belgian Waffles</b><p>Warm waffles with toppings.</p></div></div>
-      <div class="food-item"><span>🍳</span><div><b>Scrambled Eggs</b><p>Freshly prepared every morning.</p></div></div>
-      <div class="food-item"><span>🥓</span><div><b>Crispy Bacon</b><p>Classic breakfast favorite.</p></div></div>
-      <div class="food-item"><span>🌭</span><div><b>Breakfast Sausage</b><p>Seasoned breakfast sausage.</p></div></div>
-      <div class="food-item"><span>🥔</span><div><b>Hash Browns</b><p>Crispy golden potatoes.</p></div></div>
-      <div class="food-item"><span>🍞</span><div><b>French Toast</b><p>Warm cinnamon French toast.</p></div></div>
-      <div class="food-item"><span>🥣</span><div><b>Oatmeal</b><p>Warm oatmeal with toppings.</p></div></div>
-    </div>
-
-    <div id="menu-cold" class="menu-panel">
-      <div class="food-item"><span>🍓</span><div><b>Fresh Fruit</b><p>Seasonal melon, berries and grapes.</p></div></div>
-      <div class="food-item"><span>🥛</span><div><b>Greek Yogurt</b><p>Yogurt with granola and fruit.</p></div></div>
-      <div class="food-item"><span>🥣</span><div><b>Breakfast Cereal</b><p>Several fictional cereal choices.</p></div></div>
-      <div class="food-item"><span>🥐</span><div><b>Fresh Pastries</b><p>Croissants, muffins and danishes.</p></div></div>
-      <div class="food-item"><span>🍞</span><div><b>Toast Station</b><p>Toast with butter, jam and spreads.</p></div></div>
-      <div class="food-item"><span>🍎</span><div><b>Whole Fruit</b><p>Apples, bananas and oranges.</p></div></div>
-    </div>
-
-    <div id="menu-kids" class="menu-panel">
-      <div class="food-item"><span>🥞</span><div><b>Mini Pancakes</b><p>Small pancakes made for kids.</p></div></div>
-      <div class="food-item"><span>🧇</span><div><b>Mini Waffles</b><p>Waffles with fun toppings.</p></div></div>
-      <div class="food-item"><span>🍳</span><div><b>Eggs</b><p>Simple scrambled eggs.</p></div></div>
-      <div class="food-item"><span>🍓</span><div><b>Fruit Cup</b><p>A colorful mix of fruit.</p></div></div>
-      <div class="food-item"><span>🥣</span><div><b>Cereal Bar</b><p>Choose your favorite cereal.</p></div></div>
-      <div class="food-item"><span>🍫</span><div><b>Hot Chocolate</b><p>Warm chocolate drink.</p></div></div>
-    </div>
-
-    <div id="menu-drinks" class="menu-panel">
-      <div class="food-item"><span>🍊</span><div><b>Orange Juice</b><p>Fresh fictional breakfast juice.</p></div></div>
-      <div class="food-item"><span>🍎</span><div><b>Apple Juice</b><p>Cold apple juice.</p></div></div>
-      <div class="food-item"><span>🥛</span><div><b>Milk</b><p>Cold milk.</p></div></div>
-      <div class="food-item"><span>☕</span><div><b>Coffee</b><p>Fresh brewed coffee for adults.</p></div></div>
-      <div class="food-item"><span>🍫</span><div><b>Hot Chocolate</b><p>Warm chocolate drink.</p></div></div>
-      <div class="food-item"><span>💧</span><div><b>Water</b><p>Cold bottled water.</p></div></div>
-    </div>
-
-    <div class="dining-buttons">
-      <button onclick="showPage('restaurant')">View Restaurant</button>
-      <button onclick="showPage('roomservice')">Order Room Service</button>
-    </div>
-
-  </section>
 </section>
 
 
-<!-- DEALS -->
-<section id="page-deals" class="page">
-
-  <div class="page-header deals-header">
-    <div>
-      <span>SPECIAL OFFERS</span>
-      <h1>Stay more. Save more.</h1>
-      <p>Fictional packages for your roleplay vacation.</p>
-    </div>
-  </div>
-
-  <section class="content-section">
-    <div class="deals-grid">
-
-      <div class="big-deal">
-        <div class="deal-pic deal-one"></div>
-        <div class="deal-text">
-          <span>FAMILY FAVORITE</span>
-          <h2>Kids Stay & Swim</h2>
-          <p>Family room + pool access + fictional kids activities.</p>
-          <strong>20% OFF</strong>
-          <button onclick="claimDeal('Kids Stay & Swim')">Claim Deal</button>
-        </div>
-      </div>
-
-      <div class="big-deal">
-        <div class="deal-pic deal-two"></div>
-        <div class="deal-text">
-          <span>BREAKFAST</span>
-          <h2>Breakfast Included</h2>
-          <p>Enjoy fictional daily breakfast with your stay.</p>
-          <strong>FREE BREAKFAST</strong>
-          <button onclick="claimDeal('Breakfast Included')">Claim Deal</button>
-        </div>
-      </div>
-
-      <div class="big-deal">
-        <div class="deal-pic deal-three"></div>
-        <div class="deal-text">
-          <span>LUXURY</span>
-          <h2>Suite Upgrade</h2>
-          <p>Upgrade your fictional reservation to a luxury suite.</p>
-          <strong>UPGRADE OFFER</strong>
-          <button onclick="claimDeal('Suite Upgrade')">Claim Deal</button>
-        </div>
-      </div>
-
-      <div class="big-deal">
-        <div class="deal-pic deal-four"></div>
-        <div class="deal-text">
-          <span>WEEKEND</span>
-          <h2>Weekend Escape</h2>
-          <p>Stay two fictional nights and receive a special rate.</p>
-          <strong>SAVE 15%</strong>
-          <button onclick="claimDeal('Weekend Escape')">Claim Deal</button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-</section>
-
-
-<!-- AMENITIES -->
-<section id="page-amenities" class="page">
-
-  <div class="page-header amenities-header">
-    <div>
-      <span>HOTEL AMENITIES</span>
-      <h1>Everything you need.</h1>
-      <p>Explore our fictional hotel facilities.</p>
-    </div>
-  </div>
-
-  <section class="content-section">
-    <div class="amenities-large">
-
-      <div onclick="showPage('pools')"><span>🏊</span><h3>Swimming Pools</h3><p>Four fictional pool areas.</p></div>
-      <div onclick="showPage('gym')"><span>🏋️</span><h3>Fitness Center</h3><p>Full fictional fitness facility.</p></div>
-      <div onclick="showPage('activities')"><span>🎮</span><h3>Game Room</h3><p>Games and activities for guests.</p></div>
-      <div onclick="showPage('restaurant')"><span>🍽️</span><h3>Restaurant</h3><p>Breakfast and dinner.</p></div>
-      <div onclick="showPage('services')"><span>🛎️</span><h3>Front Desk</h3><p>24-hour fictional guest service.</p></div>
-      <div onclick="showPage('services')"><span>🧹</span><h3>Housekeeping</h3><p>Request room cleaning.</p></div>
-      <div onclick="showPage('parking')"><span>🚗</span><h3>Parking</h3><p>Guest parking information.</p></div>
-      <div onclick="showPage('services')"><span>🧺</span><h3>Laundry</h3><p>Guest laundry service.</p></div>
-      <div onclick="showPage('services')"><span>🎁</span><h3>Gift Shop</h3><p>Fictional hotel souvenirs.</p></div>
-      <div onclick="showPage('attractions')"><span>📍</span><h3>Nearby Attractions</h3><p>Things to do around the hotel.</p></div>
-      <div onclick="showPage('restaurant')"><span>🛎️</span><h3>Room Service</h3><p>Order fictional food to your room.</p></div>
-      <div onclick="showPage('wifi')"><span>📶</span><h3>Free Wi-Fi</h3><p>Available throughout the hotel.</p></div>
-
-    </div>
-  </section>
-</section>
-
-
-<!-- BOOKING -->
-<section id="page-booking" class="page">
-
-  <div class="page-header booking-header">
-    <div>
-      <span>RESERVATIONS</span>
-      <h1>Book your stay.</h1>
-      <p>All reservations are fictional roleplay reservations.</p>
-    </div>
-  </div>
-
-  <section class="content-section">
-
-    <div class="booking-form">
-
-      <div class="form-step">
-        <span>01</span>
-        <div>
-          <h3>Your dates</h3>
-          <div class="two-inputs">
-            <input type="date" id="bookCheckin">
-            <input type="date" id="bookCheckout">
-          </div>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <span>02</span>
-        <div>
-          <h3>Guests</h3>
-          <select id="bookGuests">
-            <option>1 Guest</option>
-            <option selected>2 Guests</option>
-            <option>3 Guests</option>
-            <option>4 Guests</option>
-            <option>5 Guests</option>
-            <option>6 Guests</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <span>03</span>
-        <div>
-          <h3>Choose a room</h3>
-          <select id="bookRoom">
-            <option value="149">Deluxe King Room — $149</option>
-            <option value="169">Deluxe Double Room — $169</option>
-            <option value="219">Family Suite — $219</option>
-            <option value="249">Poolside Family Room — $249</option>
-            <option value="279">Kids Adventure Suite — $279</option>
-            <option value="349">Executive Suite — $349</option>
-            <option value="399">Singadoore Grand Suite — $399</option>
-            <option value="599">Presidential Suite — $599</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="form-step">
-        <span>04</span>
-        <div>
-          <h3>Guest information</h3>
-          <input type="text" id="guestName" placeholder="Guest name">
-          <input type="email" id="guestEmail" placeholder="Email for fictional confirmation">
-        </div>
-      </div>
-
-      <div class="form-step">
-        <span>05</span>
-        <div>
-          <h3>Extras</h3>
-          <label class="check-option">
-            <input type="checkbox" id="addBreakfast">
-            Add daily breakfast
-          </label>
-          <label class="check-option">
-            <input type="checkbox" id="poolPackage">
-            Add pool activity package
-          </label>
-        </div>
-      </div>
-
-      <button class="big-confirm" onclick="makeBooking()">
-        Confirm Fictional Reservation
-      </button>
-
-    </div>
-
-  </section>
-</section>
-
-
-<!-- MORE PAGE -->
-<section id="page-more" class="page">
-  <div class="page-header">
-    <div>
-      <span>SINGADOORE SUITES</span>
-      <h1>More hotel services.</h1>
-    </div>
-  </div>
-
-  <section class="content-section">
-    <div class="more-grid">
-      <button onclick="showPage('gallery')">📸 Gallery</button>
-      <button onclick="showPage('restaurant')">🍽️ Restaurant</button>
-      <button onclick="showPage('roomservice')">🛎️ Room Service</button>
-      <button onclick="showPage('activities')">🎮 Activities</button>
-      <button onclick="showPage('gym')">🏋️ Fitness Center</button>
-      <button onclick="showPage('parking')">🚗 Parking</button>
-      <button onclick="showPage('attractions')">📍 Attractions</button>
-      <button onclick="showPage('services')">🧹 Guest Services</button>
-      <button onclick="showPage('faq')">❓ FAQ</button>
-      <button onclick="showPage('contact')">📞 Contact</button>
-      <button onclick="showPage('lookup')">🔎 Find Reservation</button>
-      <button onclick="showPage('staff')">🔐 Staff Portal</button>
-    </div>
-  </section>
-</section>
-
-
-<!-- GENERIC INFORMATION PAGES -->
-<section id="page-gallery" class="page simple-page">
-  <div class="page-header"><div><span>PHOTO GALLERY</span><h1>See Singadoore Suites.</h1></div></div>
-  <section class="content-section">
-    <div class="gallery-grid">
-      <div class="gallery-photo g1" onclick="imageMessage('Hotel Exterior')"><b>Hotel Exterior</b></div>
-      <div class="gallery-photo g2" onclick="imageMessage('Main Pool')"><b>Main Pool</b></div>
-      <div class="gallery-photo g3" onclick="imageMessage('Luxury Suite')"><b>Luxury Suite</b></div>
-      <div class="gallery-photo g4" onclick="imageMessage('Breakfast')"><b>Breakfast</b></div>
-      <div class="gallery-photo g5" onclick="imageMessage('Hotel Lobby')"><b>Lobby</b></div>
-      <div class="gallery-photo g6" onclick="imageMessage('Family Area')"><b>Family Area</b></div>
-    </div>
-  </section>
-</section>
-
-<section id="page-restaurant" class="page simple-page">
-  <div class="page-header restaurant-header"><div><span>DINING</span><h1>Singadoore Restaurant.</h1><p>Fictional restaurant menu.</p></div></div>
-  <section class="content-section">
-    <div class="simple-menu">
-      <div><b>🍔 Classic Burger</b><span>$16</span></div>
-      <div><b>🍕 Cheese Pizza</b><span>$18</span></div>
-      <div><b>🍝 Pasta Alfredo</b><span>$19</span></div>
-      <div><b>🥗 Garden Salad</b><span>$12</span></div>
-      <div><b>🍗 Grilled Chicken</b><span>$22</span></div>
-      <div><b>🥪 Club Sandwich</b><span>$15</span></div>
-      <div><b>🍰 Chocolate Cake</b><span>$9</span></div>
-      <div><b>🍦 Ice Cream</b><span>$7</span></div>
-    </div>
-  </section>
-</section>
-
-<section id="page-roomservice" class="page simple-page">
-  <div class="page-header"><div><span>GUEST SERVICES</span><h1>Room service.</h1><p>Fictional room service ordering.</p></div></div>
-  <section class="content-section">
-    <div class="service-box">
-      <h2>Order to your room</h2>
-      <select id="serviceRoom"><option>Choose your room</option><option>101</option><option>205</option><option>310</option><option>405</option><option>501</option></select>
-      <select id="serviceFood"><option>Choose an item</option><option>Classic Burger</option><option>Cheese Pizza</option><option>Chicken Pasta</option><option>Breakfast Basket</option><option>Kids Meal</option></select>
-      <button onclick="orderService()">Place Fictional Order</button>
-    </div>
-  </section>
-</section>
-
-<section id="page-activities" class="page simple-page">
-  <div class="page-header"><div><span>THINGS TO DO</span><h1>Hotel activities.</h1></div></div>
-  <section class="content-section">
-    <div class="activity-grid">
-      <div><span>🎮</span><h3>Game Room</h3><p>Arcade games and family activities.</p></div>
-      <div><span>🎬</span><h3>Movie Nights</h3><p>Fictional movies in the hotel lounge.</p></div>
-      <div><span>🎨</span><h3>Kids Crafts</h3><p>Creative activities for younger guests.</p></div>
-      <div><span>🏊</span><h3>Pool Games</h3><p>Poolside games throughout the day.</p></div>
-      <div><span>🎵</span><h3>Live Music</h3><p>Evening entertainment in the lounge.</p></div>
-      <div><span>🧩</span><h3>Family Challenge</h3><p>Fun fictional hotel challenges.</p></div>
-    </div>
-  </section>
-</section>
-
-<section id="page-gym" class="page simple-page">
-  <div class="page-header"><div><span>WELLNESS</span><h1>Fitness center.</h1></div></div>
-  <section class="content-section">
-    <div class="service-box">
-      <h2>Singadoore Fitness</h2>
-      <p>Open daily from 5:00 AM to 11:00 PM.</p>
-      <p>🏃 Cardio machines · 🏋️ Strength equipment · 🧘 Stretching area</p>
-      <button onclick="showToast('Fitness center information opened!')">View Fitness Info</button>
-    </div>
-  </section>
-</section>
-
-<section id="page-parking" class="page simple-page">
-  <div class="page-header"><div><span>ARRIVING BY CAR</span><h1>Parking.</h1></div></div>
-  <section class="content-section">
-    <div class="service-box">
-      <h2>Guest Parking</h2>
-      <p>Fictional guest parking is available 24 hours a day.</p>
-      <p>🚗 Self parking</p>
-      <p>🚌 Bus parking</p>
-      <p>♿ Accessible parking</p>
-    </div>
-  </section>
-</section>
-
-<section id="page-attractions" class="page simple-page">
-  <div class="page-header"><div><span>EXPLORE</span><h1>Nearby attractions.</h1></div></div>
-  <section class="content-section">
-    <div class="activity-grid">
-      <div><span>🎡</span><h3>Singadoore Adventure Park</h3><p>Fictional amusement park 10 minutes away.</p></div>
-      <div><span>🛍️</span><h3>Grand Shopping Center</h3><p>Fictional shopping destination.</p></div>
-      <div><span>🌳</span><h3>City Gardens</h3><p>A fictional outdoor attraction.</p></div>
-      <div><span>🎥</span><h3>Movie Theater</h3><p>Fictional cinema nearby.</p></div>
-    </div>
-  </section>
-</section>
-
-<section id="page-services" class="page simple-page">
-  <div class="page-header"><div><span>GUEST SERVICES</span><h1>How can we help?</h1></div></div>
-  <section class="content-section">
-    <div class="service-box">
-      <select id="serviceType">
-        <option>Housekeeping request</option>
-        <option>Extra towels</option>
-        <option>Maintenance request</option>
-        <option>Wake-up call</option>
-        <option>Concierge request</option>
-      </select>
-      <input id="serviceRoomNumber" placeholder="Room number">
-      <button onclick="sendServiceRequest()">Send Fictional Request</button>
-    </div>
-  </section>
-</section>
-
-<section id="page-wifi" class="page simple-page">
-  <div class="page-header"><div><span>CONNECTIVITY</span><h1>Free Wi-Fi.</h1></div></div>
-  <section class="content-section">
-    <div class="service-box">
-      <h2>Singadoore Guest Wi-Fi</h2>
-      <p>Network: <b>Singadoore-Guest</b></p>
-      <p>Password: <b>ROLEPLAY2026</b></p>
-      <small>Fictional network information for roleplay.</small>
-    </div>
-  </section>
-</section>
-
-<section id="page-faq" class="page simple-page">
-  <div class="page-header"><div><span>HELP CENTER</span><h1>Frequently asked questions.</h1></div></div>
-  <section class="content-section faq-list">
-    <details><summary>Is Singadoore Suites real?</summary><p>No. It is a fictional hotel roleplay website.</p></details>
-    <details><summary>Are the prices real?</summary><p>No. All prices are fictional.</p></details>
-    <details><summary>Can I make a real reservation?</summary><p>No. The booking system is only for roleplay.</p></details>
-    <details><summary>Does the website take real payments?</summary><p>No. No real payment information is collected.</p></details>
-    <details><summary>Does the breakfast timer use real time?</summary><p>Yes. The countdown uses the visitor's current computer time.</p></details>
-  </section>
-</section>
-
-<section id="page-contact" class="page simple-page">
-  <div class="page-header"><div><span>CONTACT</span><h1>Singadoore front desk.</h1></div></div>
-  <section class="content-section">
-    <div class="contact-grid">
-      <div><span>📞</span><h3>Front Desk</h3><p>(555) 010-SING</p></div>
-      <div><span>📧</span><h3>Email</h3><p>hello@singadoore.example</p></div>
-      <div><span>🕐</span><h3>Hours</h3><p>24 hours</p></div>
-    </div>
-  </section>
-</section>
-
-<section id="page-lookup" class="page simple-page">
-  <div class="page-header"><div><span>RESERVATIONS</span><h1>Find your reservation.</h1></div></div>
-  <section class="content-section">
-    <div class="service-box">
-      <input id="lookupNumber" placeholder="Enter fictional booking number">
-      <button onclick="lookupBooking()">Find Reservation</button>
-      <div id="lookupResult"></div>
-    </div>
-  </section>
-</section>
-
-<section id="page-staff" class="page simple-page">
-  <div class="page-header"><div><span>STAFF PORTAL</span><h1>Hotel dashboard.</h1><p>Fictional roleplay management system.</p></div></div>
-  <section class="content-section">
-    <div class="staff-grid">
-      <div><span>🛏️</span><b>124</b><small>Total Rooms</small></div>
-      <div><span>🟢</span><b>87</b><small>Available</small></div>
-      <div><span>🔴</span><b>37</b><small>Occupied</small></div>
-      <div><span>🧹</span><b>12</b><small>Cleaning</small></div>
-      <div><span>📅</span><b id="staffBookings">0</b><small>Today's Bookings</small></div>
-      <div><span>🍳</span><b id="breakfastGuests">0</b><small>Breakfast Guests</small></div>
-    </div>
-    <p class="staff-note">This dashboard is fictional and does not manage a real hotel.</p>
-  </section>
-</section>
-
-</main>
-
-<footer>
-  <div class="footer-brand">
-    <div class="brand-logo">S</div>
-    <div><b>Singadoore Suites</b><small>FICTIONAL ROLEPLAY HOTEL</small></div>
-  </div>
-
-  <div class="footer-links">
-    <button onclick="showPage('home')">Home</button>
-    <button onclick="showPage('rooms')">Rooms</button>
-    <button onclick="showPage('deals')">Deals</button>
-    <button onclick="showPage('pools')">Pools</button>
-    <button onclick="showPage('breakfast')">Breakfast</button>
-    <button onclick="showPage('faq')">FAQ</button>
-  </div>
-
-  <p>© 2026 Singadoore Suites · Fictional roleplay website</p>
-</footer>
-
-<!-- ROOM MODAL -->
-<div id="roomModal" class="modal">
-  <div class="modal-box room-modal">
-    <button class="modal-close" onclick="closeModal()">×</button>
-    <div id="modalRoomImage" class="modal-room-image"></div>
-    <div class="modal-content">
-      <small id="modalRoomType">ROOM</small>
-      <h2 id="modalRoomName">Room</h2>
-      <p id="modalRoomDetails"></p>
-      <p>✓ Free Wi-Fi<br>✓ TV<br>✓ Daily housekeeping<br>✓ Guest amenities<br>✓ Fictional hotel service</p>
-      <button id="modalBookButton" class="yellow-btn">Book This Room</button>
-    </div>
-  </div>
-</div>
-
-<!-- POOL MODAL -->
-<div id="poolModal" class="modal">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closePoolModal()">×</button>
-    <div class="big-icon">🏊</div>
-    <h2 id="poolModalName">Pool</h2>
-    <p id="poolModalText"></p>
-    <button class="yellow-btn" onclick="closePoolModal();showPage('booking')">Book a Stay</button>
-  </div>
-</div>
-
-<!-- BOOKING SUCCESS -->
-<div id="successModal" class="modal">
-  <div class="modal-box success-box">
-    <div class="success-icon">✓</div>
-    <h2>Booking Confirmed!</h2>
-    <p>Your fictional reservation has been created.</p>
-    <div id="confirmationDetails" class="confirmation"></div>
-    <button class="yellow-btn" onclick="closeSuccess()">Done</button>
-  </div>
-</div>
-
-<div id="toast"></div>
+<footer></footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>
-```
