@@ -1,1 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Singadoore Suites | Booking</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
+<body>
+
+<header class="navbar">
+
+  <a href="index.html" class="logo">
+    <span class="logo-mark">S</span>
+    <span>
+      <strong>Singadoore</strong>
+      <small>SUITES</small>
+    </span>
+  </a>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="rooms.html">Rooms</a>
+    <a href="pools.html">Pools</a>
+    <a href="breakfast.html">Breakfast</a>
+    <a href="deals.html">Deals</a>
+    <a href="amenities.html">Amenities</a>
+    <a href="gallery.html">Gallery</a>
+  </nav>
+
+  <a href="booking.html" class="nav-book">Book Now</a>
+
+</header>
+
+
+<section class="page-hero">
+
+  <h1>Roleplay Booking</h1>
+
+  <p>
+    This is NOT a real hotel reservation.
+  </p>
+
+</section>
+
+
+<section class="section">
+
+
+  <div class="form-card">
+
+
+    <div class="roleplay-warning">
+
+      🎭 <strong>ROLEPLAY ONLY</strong>
+
+      <br>
+
+      This form does not collect payments or make real reservations.
+
+    </div>
+
+
+    <form id="bookingForm">
+
+      <div class="form-grid">
+
+
+        <div>
+
+          <label>Guest Name</label>
+
+          <input
+            class="form-input"
+            id="guestName"
+            required
+            placeholder="Roleplay name">
+
+        </div>
+
+
+        <div>
+
+          <label>Guests</label>
+
+          <select
+            id="bookingGuests"
+            class="form-input">
+
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6+</option>
+
+          </select>
+
+        </div>
+
+
+        <div>
+
+          <label>Check In</label>
+
+          <input
+            class="form-input"
+            type="date"
+            id="bookingCheckIn"
+            required>
+
+        </div>
+
+
+        <div>
+
+          <label>Check Out</label>
+
+          <input
+            class="form-input"
+            type="date"
+            id="bookingCheckOut"
+            required>
+
+        </div>
+
+
+        <div class="form-full">
+
+          <label>Room</label>
+
+          <select
+            id="bookingRoom"
+            class="form-input">
+
+            <option value="standard">
+              Standard King Room — $129
+            </option>
+
+            <option value="family">
+              Family Suite — $189
+            </option>
+
+            <option value="singadoore">
+              Singadoore Suite — $249
+            </option>
+
+            <option value="presidential">
+              Presidential Suite — $399
+            </option>
+
+            <option value="poolside">
+              Poolside Room — $169
+            </option>
+
+            <option value="kids">
+              Kids Adventure Suite — $199
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-full">
+
+          <label>Extras</label>
+
+          <select
+            id="bookingExtra"
+            class="form-input">
+
+            <option>No Extra</option>
+            <option>Breakfast Package</option>
+            <option>Pool Package</option>
+            <option>Family Activity Package</option>
+            <option>Suite Upgrade</option>
+
+          </select>
+
+        </div>
+
+
+        <div class="form-full">
+
+          <label>Special Request</label>
+
+          <textarea
+            id="bookingRequest"
+            placeholder="Add something for your roleplay stay"></textarea>
+
+        </div>
+
+
+        <div class="form-full">
+
+          <button
+            type="submit"
+            class="btn btn-primary">
+
+            Create Roleplay Booking
+
+          </button>
+
+        </div>
+
+
+      </div>
+
+    </form>
+
+
+    <div
+      id="confirmation"
+      class="confirmation">
+
+    </div>
+
+
+  </div>
+
+</section>
+
+
+<footer></footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
