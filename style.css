@@ -1,1124 +1,796 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  background: #f5f5f5;
-  color: #171717;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-
 /* =========================
-   NAVBAR
+   REALISTIC EMBEDDED HOTEL VISUALS
+   No image files needed
 ========================= */
 
-.navbar {
-  height: 76px;
-  background: #111;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5%;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.logo-mark {
-  width: 42px;
-  height: 42px;
-  background: #ffd21c;
-  color: #111;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 25px;
-  font-weight: 900;
-}
-
-.logo strong {
-  display: block;
-  font-size: 18px;
-}
-
-.logo small {
-  display: block;
-  color: #ffd21c;
-  font-size: 9px;
-  letter-spacing: 3px;
-}
-
-nav {
-  display: flex;
-  gap: 20px;
-}
-
-nav a {
-  font-size: 14px;
-  color: #eee;
-}
-
-nav a:hover {
-  color: #ffd21c;
-}
-
-.nav-book {
-  background: #ffd21c;
-  color: #111;
-  padding: 12px 18px;
-  border-radius: 8px;
-  font-weight: bold;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-  min-height: 600px;
-  display: flex;
-  align-items: center;
-  padding: 70px 8%;
-  color: white;
-}
-
-.hero-hotel {
-  background:
-    linear-gradient(
-      rgba(0,0,0,.45),
-      rgba(0,0,0,.65)
-    ),
-    linear-gradient(
-      135deg,
-      #151515 0%,
-      #4c3c11 50%,
-      #111 100%
-    );
+.picture,
+.gallery-picture,
+.big-picture {
   position: relative;
   overflow: hidden;
+  background-size: cover;
+  background-position: center;
 }
 
-.hero-hotel::after {
-  content: "🏨";
-  position: absolute;
-  right: 9%;
-  bottom: 7%;
-  font-size: 230px;
-  opacity: .2;
-}
-
-.hero-content {
-  max-width: 720px;
-  position: relative;
-  z-index: 2;
-}
-
-.badge {
-  display: inline-block;
-  background: #ffd21c;
-  color: #111;
-  padding: 8px 15px;
-  border-radius: 30px;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-
-.hero h1 {
-  font-size: clamp(45px, 7vw, 80px);
-  line-height: .95;
-  margin-bottom: 25px;
-}
-
-.hero p {
-  font-size: 19px;
-  line-height: 1.6;
-  max-width: 650px;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 30px;
-}
-
-
-/* =========================
-   BUTTONS
-========================= */
-
-.btn {
-  display: inline-block;
-  padding: 14px 22px;
-  border-radius: 8px;
-  font-weight: bold;
-  border: 0;
-  cursor: pointer;
-  font-size: 15px;
-}
-
-.btn-primary {
-  background: #ffd21c;
-  color: #111;
-}
-
-.btn-dark {
-  background: #111;
-  color: white;
-}
-
-.btn-white {
-  background: white;
-  color: #111;
-}
-
-
-/* =========================
-   QUICK CARDS
-========================= */
-
-.quick-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 35px 7%;
-  background: white;
-}
-
-.quick-card {
-  background: #fafafa;
-  padding: 25px;
-  border-radius: 15px;
-  border: 1px solid #eee;
-  transition: .2s;
-}
-
-.quick-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px #0002;
-}
-
-.quick-card .icon {
-  font-size: 35px;
-  margin-bottom: 13px;
-}
-
-.quick-card h3 {
-  margin-bottom: 8px;
-}
-
-.quick-card p {
-  color: #666;
-  line-height: 1.5;
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section {
-  padding: 70px 7%;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.section-title h2 {
-  font-size: 38px;
-  margin-bottom: 10px;
-}
-
-.section-title p {
-  color: #666;
-}
-
-.light h2 {
-  color: white;
-}
-
-.light p {
-  color: #bbb;
-}
-
-
-/* =========================
-   CARDS
-========================= */
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.card {
-  background: white;
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid #eee;
-  box-shadow: 0 5px 20px #0001;
-  transition: .2s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px #0002;
-}
-
-.card-body {
-  padding: 22px;
-}
-
-.card-body h3 {
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-
-.card-body p {
-  color: #666;
-  line-height: 1.5;
-}
-
-.card-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.price {
-  font-size: 21px;
-  font-weight: bold;
-}
-
-.price small {
-  color: #777;
-  font-size: 12px;
-  font-weight: normal;
-}
-
-.tag {
-  display: inline-block;
-  background: #fff1a5;
-  padding: 6px 10px;
-  border-radius: 20px;
-  font-size: 11px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-
-/* =========================
-   EMBEDDED HOTEL PICTURES
-========================= */
-
-.picture {
-  height: 230px;
-  position: relative;
-  overflow: hidden;
-}
-
-.picture::before {
-  position: absolute;
-  font-size: 100px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  filter: drop-shadow(0 10px 10px #0004);
-}
+/* HOTEL EXTERIOR */
 
 .picture-exterior {
   background:
     linear-gradient(
+      rgba(10,10,10,.05),
+      rgba(10,10,10,.55)
+    ),
+    linear-gradient(
       180deg,
-      #151515,
-      #6d5417
+      #8fb9d2 0%,
+      #d9e6e8 43%,
+      #5c6264 44%,
+      #27292a 100%
     );
 }
 
 .picture-exterior::before {
-  content: "🏨";
+  content: "";
+  position: absolute;
+  left: 12%;
+  right: 12%;
+  bottom: 0;
+  height: 78%;
+  background:
+    linear-gradient(
+      90deg,
+      transparent 4%,
+      rgba(255,214,75,.95) 5%,
+      rgba(255,214,75,.95) 9%,
+      transparent 10%,
+      transparent 16%,
+      rgba(255,214,75,.95) 17%,
+      rgba(255,214,75,.95) 21%,
+      transparent 22%,
+      transparent 28%,
+      rgba(255,214,75,.95) 29%,
+      rgba(255,214,75,.95) 33%,
+      transparent 34%,
+      transparent 40%,
+      rgba(255,214,75,.95) 41%,
+      rgba(255,214,75,.95) 45%,
+      transparent 46%,
+      transparent 52%,
+      rgba(255,214,75,.95) 53%,
+      rgba(255,214,75,.95) 57%,
+      transparent 58%,
+      transparent 64%,
+      rgba(255,214,75,.95) 65%,
+      rgba(255,214,75,.95) 69%,
+      transparent 70%,
+      transparent 76%,
+      rgba(255,214,75,.95) 77%,
+      rgba(255,214,75,.95) 81%,
+      transparent 82%
+    ),
+    linear-gradient(
+      90deg,
+      #292b2c,
+      #55585a 50%,
+      #252627
+    );
+  clip-path: polygon(
+    0 22%,
+    50% 0,
+    100% 22%,
+    100% 100%,
+    0 100%
+  );
+  box-shadow: 0 -15px 35px rgba(0,0,0,.25);
 }
+
+.picture-exterior::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 24%;
+  background:
+    linear-gradient(
+      90deg,
+      #222 0 18%,
+      #555 18% 20%,
+      #222 20% 80%,
+      #555 80% 82%,
+      #222 82%
+    );
+  opacity: .9;
+}
+
+
+/* LOBBY */
 
 .picture-lobby {
   background:
+    radial-gradient(
+      ellipse at 50% 5%,
+      rgba(255,231,159,.9),
+      transparent 30%
+    ),
     linear-gradient(
-      135deg,
-      #241b0c,
-      #d5a72b,
-      #3a2b12
+      110deg,
+      #201912,
+      #806537 48%,
+      #211a13
     );
 }
 
 .picture-lobby::before {
-  content: "✨";
+  content: "";
+  position: absolute;
+  inset: 12% 9% 0;
+  background:
+    repeating-linear-gradient(
+      90deg,
+      rgba(255,255,255,.08) 0 2px,
+      transparent 2px 55px
+    ),
+    linear-gradient(
+      90deg,
+      #17130f,
+      #c29b58 50%,
+      #17130f
+    );
+  clip-path: polygon(
+    20% 0,
+    80% 0,
+    100% 100%,
+    0 100%
+  );
+  box-shadow: inset 0 0 40px #0008;
 }
 
-.picture-suite {
+.picture-lobby::after {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 25%;
+  left: 15%;
+  bottom: 8%;
   background:
     linear-gradient(
-      135deg,
-      #2d251c,
-      #d9c49b
+      180deg,
+      #a47c42,
+      #4a321d
     );
+  border-radius: 50% 50% 5px 5px;
+  box-shadow: 0 10px 25px #0009;
 }
 
-.picture-suite::before {
-  content: "🛏️";
-}
+
+/* STANDARD ROOM */
 
 .picture-standard {
   background:
     linear-gradient(
-      135deg,
-      #26333b,
-      #b9c3c8
+      180deg,
+      #d8d4cb 0 57%,
+      #a68d6b 57% 100%
     );
 }
 
 .picture-standard::before {
-  content: "🛏️";
+  content: "";
+  position: absolute;
+  width: 62%;
+  height: 48%;
+  left: 19%;
+  bottom: 7%;
+  background:
+    linear-gradient(
+      180deg,
+      #eee 0 20%,
+      #d4bd8c 21% 100%
+    );
+  border-radius: 8px 8px 4px 4px;
+  box-shadow:
+    0 12px 20px #0005,
+    inset 0 0 0 4px #a7895d;
 }
+
+.picture-standard::after {
+  content: "";
+  position: absolute;
+  width: 20%;
+  height: 32%;
+  left: 22%;
+  top: 20%;
+  background:
+    linear-gradient(
+      135deg,
+      #253b45,
+      #7894a0
+    );
+  box-shadow:
+    70px 0 0 -1px #7894a0;
+}
+
+
+/* FAMILY ROOM */
 
 .picture-family {
   background:
     linear-gradient(
-      135deg,
-      #33442f,
-      #d2c08a
+      180deg,
+      #c9d6da 0 55%,
+      #836d54 55%
     );
 }
 
 .picture-family::before {
-  content: "👨‍👩‍👧";
+  content: "";
+  position: absolute;
+  width: 75%;
+  height: 45%;
+  left: 12.5%;
+  bottom: 8%;
+  background:
+    linear-gradient(
+      180deg,
+      #eee 0 17%,
+      #b99b72 18% 100%
+    );
+  border-radius: 10px;
+  box-shadow: 0 14px 25px #0005;
 }
 
-.picture-presidential {
+.picture-family::after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 31%;
+  left: 18%;
+  top: 16%;
   background:
     linear-gradient(
       135deg,
-      #1c1c1c,
-      #b08a24
+      #536f78,
+      #b4c9cc
+    );
+  box-shadow:
+    115px 0 0 -1px #536f78;
+}
+
+
+/* SINGADOORE SUITE */
+
+.picture-suite {
+  background:
+    linear-gradient(
+      180deg,
+      #26231e 0,
+      #b9a783 57%,
+      #5d4934 57%
+    );
+}
+
+.picture-suite::before {
+  content: "";
+  position: absolute;
+  width: 64%;
+  height: 43%;
+  left: 18%;
+  bottom: 9%;
+  background:
+    linear-gradient(
+      180deg,
+      #eee8dc 0 16%,
+      #8c6c48 17% 100%
+    );
+  border-radius: 10px;
+  box-shadow: 0 18px 30px #0008;
+}
+
+.picture-suite::after {
+  content: "";
+  position: absolute;
+  width: 42%;
+  height: 45%;
+  right: 8%;
+  top: 12%;
+  background:
+    linear-gradient(
+      135deg,
+      #2d4a55,
+      #92b3bd
+    );
+  border: 5px solid #171717;
+}
+
+
+/* PRESIDENTIAL */
+
+.picture-presidential {
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      #e6c878,
+      transparent 20%
+    ),
+    linear-gradient(
+      180deg,
+      #171717,
+      #513d20 52%,
+      #171717
     );
 }
 
 .picture-presidential::before {
-  content: "👑";
+  content: "";
+  position: absolute;
+  width: 66%;
+  height: 45%;
+  left: 17%;
+  bottom: 8%;
+  background:
+    linear-gradient(
+      180deg,
+      #f3eee1 0 15%,
+      #9b773b 16% 100%
+    );
+  border-radius: 12px;
+  box-shadow:
+    0 18px 35px #000b,
+    0 0 35px rgba(255,210,70,.15);
 }
+
+.picture-presidential::after {
+  content: "";
+  position: absolute;
+  width: 30%;
+  height: 40%;
+  left: 35%;
+  top: 9%;
+  border-radius: 50%;
+  background:
+    radial-gradient(
+      circle,
+      #f8df91 0 8%,
+      #9c772e 9% 18%,
+      transparent 19%
+    );
+}
+
+
+/* POOLSIDE ROOM */
 
 .picture-poolside {
   background:
     linear-gradient(
-      135deg,
-      #0a6680,
-      #65d9e9
+      180deg,
+      #91d9e9 0 48%,
+      #0789a4 49% 100%
     );
 }
 
 .picture-poolside::before {
-  content: "🏊";
+  content: "";
+  position: absolute;
+  width: 55%;
+  height: 40%;
+  left: 10%;
+  bottom: 12%;
+  background:
+    linear-gradient(
+      180deg,
+      #eee 0 18%,
+      #c2a875 19% 100%
+    );
+  border-radius: 8px;
+  box-shadow: 0 12px 25px #0005;
 }
+
+.picture-poolside::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 35%;
+  bottom: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,.22) 0 2px,
+      transparent 2px 10px
+    );
+}
+
+
+/* KIDS SUITE */
 
 .picture-kids {
   background:
     linear-gradient(
       135deg,
-      #4e2878,
-      #ffbb38
+      #40317a,
+      #efb544
     );
 }
 
 .picture-kids::before {
-  content: "🎮";
+  content: "";
+  position: absolute;
+  width: 65%;
+  height: 45%;
+  left: 17%;
+  bottom: 9%;
+  background:
+    linear-gradient(
+      180deg,
+      #f4f1e8 0 17%,
+      #72538c 18% 100%
+    );
+  border-radius: 12px;
+  box-shadow: 0 15px 25px #0007;
 }
+
+.picture-kids::after {
+  content: "";
+  position: absolute;
+  width: 18%;
+  height: 18%;
+  top: 15%;
+  left: 15%;
+  background:
+    radial-gradient(
+      circle,
+      #fff 0 20%,
+      transparent 21%
+    );
+  box-shadow:
+    35px 0 0 #fff8,
+    70px 5px 0 #fff6,
+    105px -4px 0 #fff5;
+}
+
+
+/* MAIN POOL */
 
 .picture-pool {
   background:
     linear-gradient(
-      135deg,
-      #006d87,
-      #5de2ed
+      180deg,
+      #8dd8ec 0 40%,
+      #19a5bd 41% 100%
     );
 }
 
 .picture-pool::before {
-  content: "🏊";
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 38%;
+  left: 15%;
+  bottom: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,.25) 0 2px,
+      transparent 2px 12px
+    ),
+    linear-gradient(
+      180deg,
+      #25c8df,
+      #057c99
+    );
+  border-radius: 50% 50% 0 0;
+  transform: perspective(300px) rotateX(12deg);
 }
+
+.picture-pool::after {
+  content: "";
+  position: absolute;
+  width: 16%;
+  height: 55%;
+  right: 9%;
+  top: 12%;
+  background:
+    linear-gradient(
+      90deg,
+      #6b4b2c 0 25%,
+      #367346 26% 100%
+    );
+  border-radius: 50%;
+  box-shadow: -240px 45px 0 -5px #367346;
+}
+
+
+/* KIDS POOL */
 
 .picture-kids-pool {
   background:
     linear-gradient(
-      135deg,
-      #21a5db,
-      #72ecff
+      180deg,
+      #73d7f1,
+      #20a9d2
     );
 }
 
 .picture-kids-pool::before {
-  content: "🛝";
+  content: "";
+  position: absolute;
+  width: 72%;
+  height: 42%;
+  left: 14%;
+  bottom: 4%;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,.3) 0 2px,
+      transparent 2px 11px
+    ),
+    linear-gradient(
+      #45d7ee,
+      #1594bf
+    );
+  border-radius: 45%;
 }
+
+.picture-kids-pool::after {
+  content: "";
+  position: absolute;
+  width: 17%;
+  height: 60%;
+  left: 12%;
+  top: 5%;
+  border-radius: 40px;
+  background:
+    linear-gradient(
+      90deg,
+      #ef5a5a,
+      #f4b72b
+    );
+  transform: rotate(12deg);
+}
+
+
+/* INDOOR POOL */
 
 .picture-indoor-pool {
   background:
     linear-gradient(
-      135deg,
-      #182c49,
-      #6ca7d7
+      180deg,
+      #263b53,
+      #6d9eb9 48%,
+      #177e9b 49%
     );
 }
 
 .picture-indoor-pool::before {
-  content: "🏊";
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 37%;
+  left: 15%;
+  bottom: 0;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,.22) 0 2px,
+      transparent 2px 10px
+    ),
+    #168eaa;
+  border-radius: 50% 50% 0 0;
 }
+
+.picture-indoor-pool::after {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 13%;
+  height: 8px;
+  background: #d8b967;
+  box-shadow:
+    0 45px 0 #d8b967,
+    0 90px 0 #d8b967;
+}
+
+
+/* LAZY RIVER */
 
 .picture-river {
   background:
     linear-gradient(
-      135deg,
-      #087d88,
-      #8de9d6
+      180deg,
+      #82dcca,
+      #087f91
     );
 }
 
 .picture-river::before {
-  content: "🌊";
+  content: "";
+  position: absolute;
+  width: 78%;
+  height: 80%;
+  left: 11%;
+  top: 30%;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      rgba(255,255,255,.24) 0 2px,
+      transparent 2px 12px
+    ),
+    #0aa4a7;
+  border-radius: 50%;
+  box-shadow: 0 0 0 25px #3b8053;
 }
+
+.picture-river::after {
+  content: "";
+  position: absolute;
+  width: 12%;
+  height: 12%;
+  border-radius: 50%;
+  background: #e8e1c9;
+  left: 43%;
+  top: 42%;
+  box-shadow:
+    70px 25px 0 #e8e1c9,
+    -75px 40px 0 #e8e1c9;
+}
+
+
+/* BREAKFAST */
 
 .picture-breakfast {
   background:
     linear-gradient(
-      135deg,
-      #713e16,
-      #ffd36b
+      180deg,
+      #f0d28d,
+      #8e5d2c
     );
 }
 
 .picture-breakfast::before {
-  content: "🥞";
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 48%;
+  left: 15%;
+  bottom: 10%;
+  background:
+    radial-gradient(
+      ellipse,
+      #f4e3bd 0 28%,
+      #b57b3d 29% 34%,
+      transparent 35%
+    ),
+    radial-gradient(
+      ellipse at 70% 35%,
+      #fff 0 13%,
+      #d49b45 14% 20%,
+      transparent 21%
+    ),
+    linear-gradient(
+      #ddd,
+      #8b633c
+    );
+  border-radius: 10px;
+  box-shadow: 0 12px 25px #0007;
 }
+
+.picture-breakfast::after {
+  content: "";
+  position: absolute;
+  width: 25%;
+  height: 25%;
+  left: 8%;
+  top: 13%;
+  background:
+    radial-gradient(
+      circle,
+      #fff7df 0 30%,
+      #c8873d 31% 42%,
+      transparent 43%
+    );
+}
+
+
+/* GAME ROOM */
 
 .picture-games {
   background:
+    radial-gradient(
+      circle at 50% 35%,
+      #c73e9c,
+      transparent 25%
+    ),
     linear-gradient(
       135deg,
-      #251858,
-      #dd3e89
+      #17143d,
+      #3d2169
     );
 }
 
 .picture-games::before {
-  content: "🎮";
-}
-
-
-/* =========================
-   DARK SECTION
-========================= */
-
-.dark-section {
-  background: #111;
-  padding: 70px 7%;
-  color: white;
-}
-
-
-/* =========================
-   PAGE HERO
-========================= */
-
-.page-hero {
+  content: "";
+  position: absolute;
+  width: 55%;
+  height: 38%;
+  left: 22%;
+  bottom: 13%;
   background:
     linear-gradient(
-      135deg,
-      #111,
-      #3b3015
+      180deg,
+      #252525,
+      #090909
     );
-  color: white;
-  text-align: center;
-  padding: 75px 7%;
-}
-
-.page-hero h1 {
-  font-size: 50px;
-  margin-bottom: 12px;
-}
-
-.page-hero p {
-  color: #ccc;
-}
-
-
-/* =========================
-   AMENITIES
-========================= */
-
-.amenity-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.amenity {
-  background: white;
-  padding: 25px;
-  border-radius: 15px;
-  border: 1px solid #eee;
-  text-align: center;
-  transition: .2s;
-}
-
-.amenity:hover {
-  transform: translateY(-5px);
-}
-
-.dark-card {
-  background: #1d1d1d;
-  color: white;
-  border-color: #333;
-}
-
-.amenity-icon {
-  font-size: 40px;
-  margin-bottom: 12px;
-}
-
-.amenity p {
-  color: #777;
-  margin-top: 8px;
-  line-height: 1.5;
-}
-
-.dark-card p {
-  color: #aaa;
-}
-
-
-/* =========================
-   ROOM DETAIL
-========================= */
-
-.room-detail {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 45px;
-  align-items: center;
-}
-
-.big-picture {
-  height: 500px;
-  border-radius: 20px;
-  position: relative;
-  overflow: hidden;
-}
-
-.big-picture::before {
-  position: absolute;
-  font-size: 170px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.big-picture.picture-standard {
-  background: linear-gradient(135deg, #26333b, #b9c3c8);
-}
-
-.big-picture.picture-standard::before {
-  content: "🛏️";
-}
-
-.big-picture.picture-family {
-  background: linear-gradient(135deg, #33442f, #d2c08a);
-}
-
-.big-picture.picture-family::before {
-  content: "👨‍👩‍👧";
-}
-
-.big-picture.picture-suite {
-  background: linear-gradient(135deg, #2d251c, #d9c49b);
-}
-
-.big-picture.picture-suite::before {
-  content: "🛏️";
-}
-
-.big-picture.picture-presidential {
-  background: linear-gradient(135deg, #1c1c1c, #b08a24);
-}
-
-.big-picture.picture-presidential::before {
-  content: "👑";
-}
-
-.big-picture.picture-poolside {
-  background: linear-gradient(135deg, #0a6680, #65d9e9);
-}
-
-.big-picture.picture-poolside::before {
-  content: "🏊";
-}
-
-.big-picture.picture-kids {
-  background: linear-gradient(135deg, #4e2878, #ffbb38);
-}
-
-.big-picture.picture-kids::before {
-  content: "🎮";
-}
-
-.room-detail h1 {
-  font-size: 45px;
-  margin-bottom: 15px;
-}
-
-.room-detail p {
-  color: #666;
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.feature-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin: 25px 0;
-}
-
-.feature {
-  background: white;
-  padding: 13px;
   border-radius: 8px;
-  border: 1px solid #eee;
+  box-shadow:
+    0 0 25px rgba(255,70,190,.4),
+    0 15px 25px #0009;
+}
+
+.picture-games::after {
+  content: "";
+  position: absolute;
+  width: 18%;
+  height: 25%;
+  left: 41%;
+  top: 13%;
+  background:
+    linear-gradient(
+      90deg,
+      #55dfff,
+      #d53cff
+    );
+  border-radius: 4px;
+  box-shadow: 0 0 25px rgba(100,220,255,.5);
 }
 
 
 /* =========================
-   POOL INFORMATION
+   GALLERY SIZING
 ========================= */
-
-.pool-information {
-  margin-top: 50px;
-}
-
-.pool-info {
-  background: white;
-  border-radius: 18px;
-  padding: 25px;
-  margin-bottom: 25px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  align-items: center;
-}
-
-.pool-info .picture {
-  border-radius: 12px;
-}
-
-.pool-info h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.pool-info p {
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-
-/* =========================
-   BREAKFAST
-========================= */
-
-.breakfast-banner {
-  background: #111;
-  color: white;
-  padding: 45px;
-  border-radius: 20px;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.countdown {
-  color: #ffd21c;
-  font-size: 45px;
-  font-weight: 900;
-  margin: 15px 0;
-}
-
-.breakfast-picture {
-  border-radius: 20px;
-  margin-bottom: 50px;
-}
-
-.menu-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
-}
-
-.menu-item {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #eee;
-}
-
-.food-icon {
-  font-size: 32px;
-}
-
-.menu-item h3 {
-  margin: 8px 0;
-}
-
-.menu-item p {
-  color: #777;
-}
-
-
-/* =========================
-   DEALS
-========================= */
-
-.deal {
-  background: white;
-  border-radius: 18px;
-  padding: 30px;
-  border: 1px solid #eee;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 25px;
-  margin-bottom: 20px;
-}
-
-.deal h2 {
-  margin-bottom: 8px;
-}
-
-.deal p {
-  color: #666;
-}
-
-.discount {
-  font-size: 38px;
-  font-weight: 900;
-  color: #c79a12;
-}
-
-
-/* =========================
-   GALLERY
-========================= */
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.gallery a {
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  border: 1px solid #eee;
-}
-
-.gallery a:hover {
-  transform: translateY(-5px);
-}
 
 .gallery-picture {
-  height: 250px;
+  height: 260px;
 }
 
-.gallery h3 {
-  padding: 15px;
-}
-
-
-/* =========================
-   BOOKING
-========================= */
-
-.form-card {
-  max-width: 850px;
-  margin: auto;
-  background: white;
-  padding: 35px;
-  border-radius: 20px;
-  box-shadow: 0 10px 30px #0001;
-}
-
-.form-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.form-full {
-  grid-column: 1 / -1;
-}
-
-.form-card label {
-  display: block;
-  margin-bottom: 7px;
-  font-weight: bold;
-}
-
-.form-input,
-.form-card textarea {
-  width: 100%;
-  padding: 13px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-family: inherit;
-}
-
-.form-card textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-.roleplay-warning {
-  background: #fff7c7;
-  border: 1px solid #e5c84b;
-  padding: 18px;
-  border-radius: 12px;
-  margin-bottom: 25px;
-}
-
-.confirmation {
-  display: none;
-  background: #e7ffd0;
-  border: 1px solid #9cc85a;
-  padding: 22px;
-  border-radius: 12px;
-  margin-top: 25px;
+.gallery-picture.picture-exterior,
+.gallery-picture.picture-lobby,
+.gallery-picture.picture-suite,
+.gallery-picture.picture-pool,
+.gallery-picture.picture-kids-pool,
+.gallery-picture.picture-indoor-pool,
+.gallery-picture.picture-river,
+.gallery-picture.picture-breakfast,
+.gallery-picture.picture-games {
+  background-size: cover;
+  background-position: center;
 }
 
 
 /* =========================
-   ABOUT
+   LARGE ROOM VISUALS
 ========================= */
 
-.about-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  align-items: center;
-}
-
-.about-picture {
-  height: 450px;
-  border-radius: 20px;
-}
-
-.info-box {
-  background: white;
-  padding: 35px;
-  border-radius: 18px;
-  border: 1px solid #eee;
-  line-height: 1.7;
-}
-
-.info-box h2 {
-  font-size: 34px;
-  margin-bottom: 15px;
-}
-
-.info-box p {
-  color: #666;
+.big-picture.picture-standard,
+.big-picture.picture-family,
+.big-picture.picture-suite,
+.big-picture.picture-presidential,
+.big-picture.picture-poolside,
+.big-picture.picture-kids {
+  background-size: cover;
+  background-position: center;
 }
 
 
 /* =========================
-   CONTACT
+   REMOVE OLD EMOJI VISUALS
 ========================= */
 
-.contact-box {
-  max-width: 700px;
-  margin: 50px auto 0;
-  background: white;
-  padding: 35px;
-  border-radius: 18px;
-  text-align: center;
-  border: 1px solid #eee;
-}
-
-.contact-box h2 {
-  margin-bottom: 15px;
-}
-
-.contact-box p {
-  color: #666;
-  margin: 5px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-  background: #111;
-  color: white;
-  padding: 55px 7% 20px;
-}
-
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
-  gap: 35px;
-  margin-bottom: 40px;
-}
-
-.footer-grid h3 {
-  color: #ffd21c;
-  margin-bottom: 15px;
-}
-
-.footer-grid a {
-  display: block;
-  color: #bbb;
-  margin-bottom: 10px;
-}
-
-.footer-grid a:hover {
-  color: #ffd21c;
-}
-
-.footer-grid p {
-  color: #aaa;
-  line-height: 1.6;
-}
-
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 15px;
-}
-
-.footer-bottom {
-  border-top: 1px solid #333;
-  padding-top: 20px;
-  color: #777;
-  text-align: center;
-  font-size: 13px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media(max-width: 1000px) {
-
-  nav {
-    display: none;
-  }
-
-  .quick-grid,
-  .cards,
-  .amenity-grid,
-  .menu-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .room-detail,
-  .pool-info,
-  .about-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-}
-
-
-@media(max-width: 650px) {
-
-  .navbar {
-    padding: 0 15px;
-  }
-
-  .nav-book {
-    display: none;
-  }
-
-  .hero {
-    padding: 50px 20px;
-  }
-
-  .hero-hotel::after {
-    font-size: 120px;
-  }
-
-  .section {
-    padding: 50px 20px;
-  }
-
-  .quick-grid,
-  .cards,
-  .amenity-grid,
-  .menu-grid,
-  .gallery,
-  .form-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .deal {
-    display: block;
-  }
-
-  .discount {
-    margin: 18px 0;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .page-hero h1 {
-    font-size: 38px;
-  }
-
-  .room-detail h1 {
-    font-size: 36px;
-  }
-
-  .big-picture {
-    height: 330px;
-  }
-
+.picture::before,
+.picture::after,
+.gallery-picture::before,
+.gallery-picture::after,
+.big-picture::before,
+.big-picture::after {
+  font-size: 0;
 }
